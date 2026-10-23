@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaeem Mohammed | Mechatronics & Robotics Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in { animation: fadeIn 0.8s ease-out forwards; }
+        .glass-card {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-950 text-gray-100 font-sans min-h-screen">
+
+    <!-- Header / Hero -->
+    <header class="max-w-5xl mx-auto px-6 py-16 animate-fade-in">
+        <div class="inline-block px-3 py-1 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-full text-sm font-semibold mb-4">
+            Available for Dec 2026 Internship
+        </div>
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4">
+            Zaeem Mohammed
+        </h1>
+        <p class="text-xl text-gray-400 max-w-2xl mb-8">
+            Final-Year Mechatronics Engineering Student specializing in Physical Robotics, Inverse Kinematics, Embedded Firmware, and CAD Prototyping.
+        </p>
+        
+        <div class="flex flex-wrap gap-4">
+            <a href="mailto:zaeemmohammad76@gmail.com" class="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-lg shadow-blue-600/30">
+                Contact Me
+            </a>
+            <a href="https://harvest-dolomite-4c2.notion.site/Zaeem-Mohammed-Robotics-Mechatronics-Portfolio-4026bfebf06d800c9c47ee99051915b5" target="_blank" class="px-6 py-3 glass-card hover:bg-gray-800 text-gray-200 font-medium rounded-lg transition-all duration-300 transform hover:-translate-y-1">
+                Notion Portfolio
+            </a>
+        </div>
+    </header>
+
+    <!-- Projects Section -->
+    <main class="max-w-5xl mx-auto px-6 py-8" id="projects">
+        
+        <!-- Capstone Project -->
+        <section class="glass-card rounded-2xl p-8 mb-12 shadow-2xl transition-all duration-300 border border-blue-500/30">
+            <div class="flex items-center justify-between mb-6">
+                <span class="text-xs font-bold uppercase tracking-wider text-blue-400">Major Capstone Project</span>
+                <span class="text-xs bg-gray-800 text-gray-300 px-3 py-1 rounded-full">Python • RPi 4 • PyBullet • CAD</span>
+            </div>
+            
+            <h2 class="text-3xl font-bold mb-4">18-DOF Physical Hexapod Robot & Digital Twin</h2>
+            <p class="text-gray-300 mb-6 leading-relaxed">
+                Designed, built, and programmed a functional 18-DOF physical hexapod robot driven by a Raspberry Pi 4. Built a parallel PyBullet physics simulation engine in Python to validate inverse kinematics joint trajectories, gait dynamics (Wave, Tripod, Ripple), stair-climbing sequences, and motor torque capacity.
+            </p>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm pt-4 border-t border-gray-800">
+                <div>
+                    <span class="block text-gray-500">Controller</span>
+                    <strong class="text-gray-200">Raspberry Pi 4</strong>
+                </div>
+                <div>
+                    <span class="block text-gray-500">Kinematics</span>
+                    <strong class="text-gray-200">3-DOF per Leg IK (NumPy)</strong>
+                </div>
+                <div>
+                    <span class="block text-gray-500">Gaits</span>
+                    <strong class="text-gray-200">Wave, Tripod, Ripple</strong>
+                </div>
+                <div>
+                    <span class="block text-gray-500">CAD Design</span>
+                    <strong class="text-gray-200">SolidWorks / Fusion 360</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secondary Projects -->
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+            <div class="glass-card rounded-xl p-6">
+                <h3 class="text-xl font-bold mb-2">RC Aircraft Aerodynamic Design</h3>
+                <p class="text-gray-400 text-sm">Fixed-wing aircraft modeled in SolidWorks with optimized weight distribution, wing camber, and custom 3D-printed linkages.</p>
+            </div>
+
+            <div class="glass-card rounded-xl p-6">
+                <h3 class="text-xl font-bold mb-2">Closed-Loop Embedded Control</h3>
+                <p class="text-gray-400 text-sm">Arduino/ESP32 platform with 6-axis IMU sensors and PID control algorithms for dynamic stabilization.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="border-t border-gray-900 py-8 text-center text-gray-500 text-sm">
+        © 2026 Zaeem Mohammed • Bengaluru, India
+    </footer>
+
+</body>
+</html>
