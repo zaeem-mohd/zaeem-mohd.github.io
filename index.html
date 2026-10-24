@@ -1,138 +1,207 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zaeem Mohammed | Portfolio</title>
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: { cmf: '#FF4500' }
+                }
+            }
+        }
+    </script>
+
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Three.js for 3D Viewer -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
         
         body {
-            background-color: #F5F5F7;
-            color: #1D1D1F;
             font-family: 'Inter', sans-serif;
             -webkit-font-smoothing: antialiased;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        .font-mono {
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        .accent-cmf { color: #FF4500; }
-        .bg-cmf { background-color: #FF4500; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
 
         .tech-border {
             border: 1px solid #E5E5EA;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: border-color 0.3s ease;
+        }
+        
+        .dark .tech-border {
+            border-color: #333333;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
         }
 
         .img-container {
             overflow: hidden;
-            background: #E5E5EA;
             border-radius: 12px;
         }
-        
         .img-container img, .img-container video {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
+        .img-container:hover img { transform: scale(1.05); }
 
-        .img-container:hover img {
-            transform: scale(1.03);
-        }
+        #canvas-container { cursor: grab; }
+        #canvas-container:active { cursor: grabbing; }
     </style>
 </head>
-<body class="p-4 md:p-8 lg:max-w-7xl lg:mx-auto">
+<body class="bg-[#F5F5F7] text-[#1D1D1F] dark:bg-[#111111] dark:text-[#F5F5F7] p-4 md:p-8 lg:max-w-7xl lg:mx-auto">
 
-    <nav class="flex justify-between items-center mb-12 bg-white/80 backdrop-blur-md rounded-full px-6 py-4 tech-border sticky top-4 z-50">
-        <div class="font-semibold text-lg tracking-tight">Zaeem Mohammed</div>
-        <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-500">
-            <a href="#projects" class="hover:text-black transition-colors">Projects</a>
-            <a href="https://github.com/zaeem-mohd" target="_blank" class="hover:text-black transition-colors">GitHub</a>
-            <a href="mailto:zaeemmohammad76@gmail.com" class="hover:text-black transition-colors">Contact</a>
+    <!-- NAVIGATION -->
+    <nav data-aos="fade-down" class="flex justify-between items-center mb-16 bg-white/80 dark:bg-black/60 backdrop-blur-md rounded-full px-6 py-4 tech-border sticky top-4 z-50">
+        <div class="font-bold text-lg tracking-tight">Zaeem<span class="text-cmf">.</span></div>
+        <div class="hidden md:flex space-x-6 text-sm font-medium items-center text-gray-500 dark:text-gray-400">
+            <a href="#projects" class="hover:text-black dark:hover:text-white transition-colors">Projects</a>
+            <a href="https://github.com/zaeem-mohd" target="_blank" class="hover:text-black dark:hover:text-white transition-colors">GitHub</a>
+            <a href="https://linkedin.com/in/zaeem-mohammed-17a882" target="_blank" class="hover:text-black dark:hover:text-white transition-colors">LinkedIn</a>
+            <a href="mailto:zaeemmohammad76@gmail.com" class="hover:text-black dark:hover:text-white transition-colors">Email</a>
+            
+            <a href="Zaeem_Mohammed_Resume.pdf" download class="bg-gray-100 dark:bg-gray-800 text-black dark:text-white px-4 py-2 rounded-full hover:bg-cmf hover:text-white dark:hover:bg-cmf transition-colors">
+                Resume ↓
+            </a>
+            
+            <button onclick="toggleDarkMode()" class="p-2 bg-gray-200 dark:bg-gray-800 rounded-full hover:scale-110 transition-transform" title="Toggle Dark Mode">
+                <span id="theme-icon">🌙</span>
+            </button>
         </div>
     </nav>
 
-    <header class="mb-16">
-        <div class="font-mono text-xs font-bold tracking-widest text-gray-400 mb-4 uppercase">
-            Status: Available Dec 2026
+    <!-- HERO SECTION -->
+    <header class="mb-20" data-aos="fade-up">
+        <div class="font-mono text-xs font-bold tracking-widest text-cmf mb-6 uppercase h-4">
+            <span id="typing-text"></span><span class="animate-pulse">_</span>
         </div>
+        
         <h1 class="text-5xl md:text-7xl font-bold tracking-tighter mb-6 leading-tight">
-            Mechatronics <br>
-            <span class="accent-cmf">& Robotics</span> Engineer.
+            Final-year <br>
+            <span class="text-cmf">Mechatronics</span> student.
         </h1>
-        <p class="text-lg md:text-xl text-gray-500 max-w-2xl leading-relaxed font-medium mb-8">
-            Specializing in 18-DOF legged robotics, custom inverse kinematics solvers, embedded Linux, and industrial automation. Final-year engineering student at MITE.
+        <p class="text-lg md:text-xl text-gray-500 dark:text-gray-400 max-w-2xl leading-relaxed font-medium mb-8">
+            Building an 18-DOF hexapod robotic vacuum cleaner with a team of 4. Specialized in inverse kinematics, physics simulation, embedded Linux, and industrial automation.
         </p>
     </header>
 
-    <section id="projects" class="mb-16">
-        <div class="font-mono text-xs font-bold tracking-widest text-gray-400 mb-4 uppercase">Selected Work 01</div>
+    <!-- SKILLS & TECH STACK -->
+    <section id="skills" class="mb-20" data-aos="fade-up">
+        <div class="font-mono text-xs font-bold tracking-widest text-gray-400 mb-4 uppercase">System Proficiencies</div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 font-mono text-sm">
+            <div class="bg-white dark:bg-[#1A1A1A] p-6 rounded-3xl tech-border">
+                <span class="text-cmf font-bold block mb-2">01 // SOFTWARE</span>
+                Python, C/C++, MATLAB, Embedded Linux, ROS
+            </div>
+            <div class="bg-white dark:bg-[#1A1A1A] p-6 rounded-3xl tech-border">
+                <span class="text-cmf font-bold block mb-2">02 // HARDWARE</span>
+                Raspberry Pi, Arduino, PCA9685, BNO055, VL53L0X
+            </div>
+            <div class="bg-white dark:bg-[#1A1A1A] p-6 rounded-3xl tech-border">
+                <span class="text-cmf font-bold block mb-2">03 // DESIGN</span>
+                SolidWorks, Siemens NX, Fusion 360, 3D Printing
+            </div>
+            <div class="bg-white dark:bg-[#1A1A1A] p-6 rounded-3xl tech-border">
+                <span class="text-cmf font-bold block mb-2">04 // AUTOMATION</span>
+                PLC & SCADA, Ladder Logic, PyBullet Simulation
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN PROJECT: HEXAPOD -->
+    <section id="projects" class="mb-20">
+        <div class="font-mono text-xs font-bold tracking-widest text-gray-400 mb-4 uppercase" data-aos="fade-right">Selected Work 01</div>
         
-        <div class="bg-white rounded-3xl p-6 md:p-10 tech-border">
+        <div class="bg-white dark:bg-[#1A1A1A] rounded-3xl p-6 md:p-10 tech-border" data-aos="fade-up">
             <div class="flex flex-col md:flex-row justify-between items-start mb-8 gap-4">
                 <div>
-                    <h3 class="text-3xl font-bold tracking-tight mb-2">18-DOF Hexapod</h3>
-                    <p class="text-gray-500 font-medium">Autonomous Stair-Climbing Platform</p>
+                    <h3 class="text-3xl font-bold tracking-tight mb-2">18-DOF Hexapod Robotic Vacuum</h3>
+                    <p class="text-gray-500 dark:text-gray-400 font-medium">Team of 4 • My Focus: Kinematics, PyBullet Simulation & Control Software</p>
                 </div>
-                <div class="font-mono text-xs font-bold bg-gray-100 px-3 py-1 rounded-full uppercase tracking-wider">
-                    Hardware + Simulation
+                <div class="flex gap-2">
+                    <a href="https://github.com/zaeem-mohd/hexapod-robotics" target="_blank" class="font-mono text-xs font-bold border border-cmf text-cmf hover:bg-cmf hover:text-white px-4 py-2 rounded-full uppercase transition-colors">
+                        View Code & Math →
+                    </a>
                 </div>
             </div>
             
+            <!-- HARDWARE GALLERY -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-                <div class="flex flex-col gap-2">
-                    <div class="img-container aspect-video">
-                        <img src="hexapod-chassis-front.jpg" alt="Front Chassis" onerror="this.src='https://via.placeholder.com/400x225?text=Image+Not+Found'">
+                <div class="flex flex-col gap-2" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="img-container aspect-video bg-gray-200 dark:bg-gray-800">
+                        <img src="hexapod-chassis-front.jpg" alt="Front Chassis" onerror="this.src='https://via.placeholder.com/400x225/333/fff?text=CHASSIS_IMG'">
                     </div>
-                    <div class="font-mono text-[10px] text-gray-400 uppercase tracking-widest pl-1">SYS_CAM_01 // CHASSIS_FRONT</div>
+                    <div class="font-mono text-[10px] text-gray-500 font-medium pl-1">Hardware: Chassis Front View</div>
                 </div>
                 
-                <div class="flex flex-col gap-2">
-                    <div class="img-container aspect-video">
-                        <img src="hexapod-electronics-hub.jpg" alt="Electronics Hub" onerror="this.src='https://via.placeholder.com/400x225?text=Image+Not+Found'">
+                <div class="flex flex-col gap-2" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="img-container aspect-video bg-gray-200 dark:bg-gray-800">
+                        <img src="hexapod-electronics-hub.jpg" alt="Electronics Hub" onerror="this.src='https://via.placeholder.com/400x225/333/fff?text=ELECTRONICS_IMG'">
                     </div>
-                    <div class="font-mono text-[10px] text-gray-400 uppercase tracking-widest pl-1">SYS_CAM_02 // PCA9685_HUB</div>
+                    <div class="font-mono text-[10px] text-gray-500 font-medium pl-1">Hardware: PCA9685 Electronics Hub</div>
                 </div>
 
-                <div class="flex flex-col gap-2">
-                    <div class="img-container aspect-video border-2 border-[#FF4500]">
+                <div class="flex flex-col gap-2" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="img-container aspect-video border-2 border-cmf bg-black">
                         <video autoplay loop muted playsinline>
                             <source src="hexapod-sim-demo.mp4" type="video/mp4">
                         </video>
                     </div>
-                    <div class="font-mono text-[10px] accent-cmf uppercase tracking-widest pl-1 font-bold">● LIVE_TELEMETRY // ACTUATION_TEST</div>
+                    <div class="font-mono text-[10px] text-cmf font-bold pl-1">Live Actuation Test (Video)</div>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
-                <div class="flex flex-col gap-2">
-                    <div class="img-container aspect-[16/9]">
-                        <img src="hexapod-telemetry-wave.jpg" alt="Wave Gait Telemetry" onerror="this.src='https://via.placeholder.com/400x225?text=Image+Not+Found'">
+            <!-- SIMULATION & INTERACTIVE 3D CAD -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-10">
+                <div class="grid grid-rows-2 gap-4">
+                    <div class="flex flex-col gap-2" data-aos="fade-right">
+                        <div class="img-container aspect-[21/9] bg-gray-200 dark:bg-gray-800">
+                            <img src="hexapod-telemetry-wave.jpg" alt="Wave Gait" onerror="this.src='https://via.placeholder.com/600x250/333/fff?text=WAVE_GAIT_DATA'">
+                        </div>
+                        <div class="font-mono text-[10px] text-gray-500 font-medium pl-1">Simulation: Wave Gait Kinematic Analysis</div>
                     </div>
-                    <div class="font-mono text-[10px] text-gray-400 uppercase tracking-widest pl-1">SIM_DATA // WAVE_GAIT_ANALYSIS</div>
+                    <div class="flex flex-col gap-2" data-aos="fade-right">
+                        <div class="img-container aspect-[21/9] bg-gray-200 dark:bg-gray-800">
+                            <img src="hexapod-telemetry-tripod.jpg" alt="Tripod Gait" onerror="this.src='https://via.placeholder.com/600x250/333/fff?text=TRIPOD_GAIT_DATA'">
+                        </div>
+                        <div class="font-mono text-[10px] text-gray-500 font-medium pl-1">Simulation: Tripod Gait Kinematic Analysis</div>
+                    </div>
                 </div>
-                <div class="flex flex-col gap-2">
-                    <div class="img-container aspect-[16/9]">
-                        <img src="hexapod-telemetry-tripod.jpg" alt="Tripod Gait Telemetry" onerror="this.src='https://via.placeholder.com/400x225?text=Image+Not+Found'">
+                
+                <div class="flex flex-col gap-2 h-full" data-aos="fade-left">
+                    <div id="canvas-container" class="w-full h-full min-h-[300px] rounded-xl tech-border bg-gray-100 dark:bg-[#222] relative overflow-hidden flex items-center justify-center">
+                        <div class="absolute bottom-4 left-4 font-mono text-[10px] text-gray-500 uppercase z-10 pointer-events-none">
+                            [ DRAG TO ROTATE 3D MODEL ]
+                        </div>
                     </div>
-                    <div class="font-mono text-[10px] text-gray-400 uppercase tracking-widest pl-1">SIM_DATA // TRIPOD_GAIT_ANALYSIS</div>
+                    <div class="font-mono text-[10px] text-cmf uppercase tracking-widest pl-1 font-bold">WEBGL // LIVE_KINEMATIC_RIG</div>
                 </div>
             </div>
 
+            <!-- SPECS -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-2 font-mono text-xs">
-                <div class="bg-gray-50 p-4 rounded-xl border border-gray-100 flex flex-col justify-between h-24">
+                <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-xl border border-gray-100 dark:border-gray-700 flex flex-col justify-between h-24">
                     <span class="text-gray-400">KINEMATICS</span>
                     <span class="font-bold">L1:35 / L2:95 / L3:105</span>
                 </div>
-                <div class="bg-gray-50 p-4 rounded-xl border border-gray-100 flex flex-col justify-between h-24">
+                <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-xl border border-gray-100 dark:border-gray-700 flex flex-col justify-between h-24">
                     <span class="text-gray-400">CONTROL</span>
                     <span class="font-bold">50Hz (RPi 4)</span>
                 </div>
-                <div class="bg-gray-50 p-4 rounded-xl border border-gray-100 flex flex-col justify-between h-24">
+                <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-xl border border-gray-100 dark:border-gray-700 flex flex-col justify-between h-24">
                     <span class="text-gray-400">ACTUATION</span>
                     <span class="font-bold">18x MG996R</span>
                 </div>
@@ -144,38 +213,157 @@
         </div>
     </section>
 
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-        <div class="bg-white rounded-3xl p-8 tech-border hover:shadow-lg transition-shadow">
-            <div class="font-mono text-xs font-bold bg-orange-100 text-orange-600 px-3 py-1 rounded-full uppercase tracking-wider w-fit mb-6">
+    <!-- SECONDARY PROJECTS -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
+        <div class="bg-white dark:bg-[#1A1A1A] rounded-3xl p-8 tech-border hover:shadow-lg dark:hover:shadow-white/5 transition-shadow" data-aos="fade-up">
+            <div class="font-mono text-xs font-bold bg-orange-100 text-orange-600 dark:bg-orange-900/30 dark:text-orange-400 px-3 py-1 rounded-full uppercase tracking-wider w-fit mb-6">
                 Embedded Sensors
             </div>
             <h3 class="text-xl font-bold tracking-tight mb-3">Food Spoilage Monitor</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">
+            <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
                 Environmental tracking system utilizing Arduino, DHT11, and VOC gas sensors for continuous data acquisition and analysis.
             </p>
         </div>
 
-        <div class="bg-white rounded-3xl p-8 tech-border hover:shadow-lg transition-shadow">
-            <div class="font-mono text-xs font-bold bg-blue-100 text-blue-600 px-3 py-1 rounded-full uppercase tracking-wider w-fit mb-6">
+        <div class="bg-white dark:bg-[#1A1A1A] rounded-3xl p-8 tech-border hover:shadow-lg dark:hover:shadow-white/5 transition-shadow" data-aos="fade-up" data-aos-delay="100">
+            <div class="font-mono text-xs font-bold bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400 px-3 py-1 rounded-full uppercase tracking-wider w-fit mb-6">
                 Aerodynamics
             </div>
             <h3 class="text-xl font-bold tracking-tight mb-3">RC Aircraft Assembly</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">
+            <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
                 Fixed-wing structural assembly featuring brushless motor integration and precise static center-of-gravity balancing.
             </p>
         </div>
     </section>
 
-    <footer class="text-center pb-12 pt-8">
-        <a href="mailto:zaeemmohammad76@gmail.com" class="inline-flex items-center justify-center bg-black text-white font-medium px-8 py-4 rounded-full hover:scale-105 transition-transform">
-            Get in touch
+    <!-- FOOTER -->
+    <footer class="text-center pb-12 pt-8 border-t border-gray-200 dark:border-gray-800" data-aos="fade-up">
+        <h2 class="text-2xl font-bold mb-6">Ready to initiate contact?</h2>
+        <a href="mailto:zaeemmohammad76@gmail.com" class="inline-flex items-center justify-center bg-black dark:bg-white text-white dark:text-black font-medium px-8 py-4 rounded-full hover:scale-105 transition-transform">
+            Send an Email
         </a>
-        <div class="mt-8 font-mono text-xs text-gray-400 space-x-4">
-            <a href="https://github.com/zaeem-mohd" class="hover:text-black transition-colors">GITHUB</a>
+        <div class="mt-12 font-mono text-xs text-gray-400 space-x-4">
+            <a href="https://github.com/zaeem-mohd" class="hover:text-cmf transition-colors">GITHUB</a>
+            <span>//</span>
+            <a href="https://linkedin.com/in/zaeem-mohammed-17a882" class="hover:text-cmf transition-colors">LINKEDIN</a>
             <span>//</span>
             <span>+91-7795529508</span>
         </div>
     </footer>
 
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 50 });
+
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+            const isDark = document.documentElement.classList.contains('dark');
+            document.getElementById('theme-icon').innerText = isDark ? '☀️' : '🌙';
+            if(hexapodMaterial) {
+                hexapodMaterial.color.setHex(isDark ? 0xFF4500 : 0x000000);
+            }
+        }
+
+        const textToType = "> SYS.BOOT // AVAILABLE DEC 2026";
+        let typingIndex = 0;
+        function typeWriter() {
+            if (typingIndex < textToType.length) {
+                document.getElementById("typing-text").innerHTML += textToType.charAt(typingIndex);
+                typingIndex++;
+                setTimeout(typeWriter, 50);
+            }
+        }
+        setTimeout(typeWriter, 500); 
+
+        let scene, camera, renderer, hexapodGroup, hexapodMaterial;
+
+        function init3D() {
+            const container = document.getElementById('canvas-container');
+            
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+            camera.position.set(0, 5, 10);
+            camera.lookAt(0, 0, 0);
+
+            renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(container.clientWidth, container.clientHeight);
+            container.appendChild(renderer.domElement);
+
+            hexapodGroup = new THREE.Group();
+            
+            const isDark = document.documentElement.classList.contains('dark');
+            hexapodMaterial = new THREE.MeshBasicMaterial({ 
+                color: isDark ? 0xFF4500 : 0x000000, 
+                wireframe: true,
+                transparent: true,
+                opacity: 0.8
+            });
+
+            const bodyGeo = new THREE.CylinderGeometry(1.5, 1.5, 0.5, 6);
+            const body = new THREE.Mesh(bodyGeo, hexapodMaterial);
+            hexapodGroup.add(body);
+
+            const radius = 1.6;
+            for(let i=0; i<6; i++) {
+                const angle = (i * Math.PI * 2) / 6;
+                const legGeo = new THREE.CylinderGeometry(0.1, 0.1, 2, 4);
+                const leg = new THREE.Mesh(legGeo, hexapodMaterial);
+                
+                leg.position.x = Math.cos(angle) * (radius + 0.5);
+                leg.position.z = Math.sin(angle) * (radius + 0.5);
+                leg.position.y = -0.5;
+                
+                leg.rotation.z = angle;
+                leg.rotation.x = Math.PI / 4;
+                
+                hexapodGroup.add(leg);
+            }
+
+            scene.add(hexapodGroup);
+
+            let isDragging = false;
+            let previousMousePosition = { x: 0, y: 0 };
+
+            container.addEventListener('mousedown', (e) => { isDragging = true; });
+            document.addEventListener('mouseup', () => { isDragging = false; });
+            document.addEventListener('mousemove', (e) => {
+                const deltaMove = {
+                    x: e.offsetX - previousMousePosition.x,
+                    y: e.offsetY - previousMousePosition.y
+                };
+
+                if (isDragging) {
+                    const deltaRotationQuaternion = new THREE.Quaternion()
+                        .setFromEuler(new THREE.Euler(
+                            (deltaMove.y * 1) * Math.PI / 180,
+                            (deltaMove.x * 1) * Math.PI / 180,
+                            0,
+                            'XYZ'
+                        ));
+                    hexapodGroup.quaternion.multiplyQuaternions(deltaRotationQuaternion, hexapodGroup.quaternion);
+                }
+                previousMousePosition = { x: e.offsetX, y: e.offsetY };
+            });
+
+            window.addEventListener('resize', () => {
+                camera.aspect = container.clientWidth / container.clientHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(container.clientWidth, container.clientHeight);
+            });
+
+            animate3D();
+        }
+
+        function animate3D() {
+            requestAnimationFrame(animate3D);
+            hexapodGroup.rotation.y += 0.005;
+            renderer.render(scene, camera);
+        }
+
+        window.addEventListener('load', init3D);
+    </script>
 </body>
 </html>
