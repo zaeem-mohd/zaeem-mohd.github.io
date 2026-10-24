@@ -1,3 +1,8 @@
+<!-- 
+  EASY-EDIT PORTFOLIO TEMPLATE 
+  Update the text inside the standard tags (like <h1>, <p>, <span>) 
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,193 +11,61 @@
     <title>Zaeem Mohammed | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        /* FONTS: Inter (Apple-style) and JetBrains Mono (Tech-style) */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
         
         body {
-            background-color: #F5F5F7; /* Apple off-white */
-            color: #1D1D1F;
+            background-color: #F5F5F7; /* Apple Off-White Background */
+            color: #1D1D1F;            /* Apple Dark Text */
             font-family: 'Inter', sans-serif;
-            -webkit-font-smoothing: antialiased;
         }
 
-        .font-mono {
-            font-family: 'JetBrains Mono', monospace;
-        }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .accent-cmf { color: #FF4500; } /* CMF Orange/Red */
+        .bg-cmf { background-color: #FF4500; }
 
-        .accent-cmf {
-            color: #FF4500; /* CMF vibrant orange/red */
-        }
-        .bg-cmf {
-            background-color: #FF4500;
-        }
-
-        /* Technical border styling (Teenage Engineering) */
+        /* Teenage Engineering Technical Borders */
         .tech-border {
             border: 1px solid #E5E5EA;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
         }
 
-        /* Smooth image containers */
+        /* Image Containers (Fixed Aspect Ratio) */
         .img-container {
             overflow: hidden;
             background: #E5E5EA;
             border-radius: 12px;
         }
-        
         .img-container img, .img-container video {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Fixes the stretching */
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .img-container:hover img {
-            transform: scale(1.03);
+            object-fit: cover;
         }
     </style>
 </head>
 <body class="p-4 md:p-8 lg:max-w-7xl lg:mx-auto">
 
-    <!-- NAVIGATION (Apple style floating pill) -->
-    <nav class="flex justify-between items-center mb-12 bg-white/80 backdrop-blur-md rounded-full px-6 py-4 tech-border sticky top-4 z-50">
-        <div class="font-semibold text-lg tracking-tight">Zaeem Mohammed</div>
-        <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-500">
-            <a href="#projects" class="hover:text-black transition-colors">Projects</a>
-            <a href="https://github.com/zaeem-mohd" target="_blank" class="hover:text-black transition-colors">GitHub</a>
-            <a href="mailto:zaeemmohammad76@gmail.com" class="hover:text-black transition-colors">Contact</a>
+    <!-- NAVIGATION -->
+    <nav class="flex justify-between items-center mb-12 bg-white/80 backdrop-blur-md rounded-full px-6 py-4 tech-border">
+        <div class="font-semibold text-lg">Zaeem Mohammed</div>
+        <div class="space-x-8 text-sm font-medium text-gray-500">
+            <a href="#projects">Projects</a>
+            <a href="mailto:zaeemmohammad76@gmail.com">Contact</a>
         </div>
     </nav>
 
-    <!-- HEADER / HERO -->
+    <!-- HERO SECTION -->
     <header class="mb-16">
-        <div class="font-mono text-xs font-bold tracking-widest text-gray-400 mb-4 uppercase">
-            Status: Available Dec 2026
-        </div>
-        <h1 class="text-5xl md:text-7xl font-bold tracking-tighter mb-6 leading-tight">
+        <h1 class="text-5xl md:text-7xl font-bold mb-6">
             Mechatronics <br>
             <span class="accent-cmf">& Robotics</span> Engineer.
         </h1>
-        <p class="text-lg md:text-xl text-gray-500 max-w-2xl leading-relaxed font-medium mb-8">
-            Specializing in 18-DOF legged robotics, custom inverse kinematics solvers, embedded Linux, and industrial automation. Final-year engineering student at MITE.
+        <p class="text-lg text-gray-500 max-w-2xl">
+            Specializing in 18-DOF legged robotics, inverse kinematics, and embedded Linux.
         </p>
     </header>
 
-    <!-- MAIN PROJECT -->
-    <section id="projects" class="mb-16">
-        <div class="font-mono text-xs font-bold tracking-widest text-gray-400 mb-4 uppercase">Selected Work 01</div>
-        
-        <div class="bg-white rounded-3xl p-6 md:p-10 tech-border">
-            <div class="flex flex-col md:flex-row justify-between items-start mb-8 gap-4">
-                <div>
-                    <h3 class="text-3xl font-bold tracking-tight mb-2">18-DOF Hexapod</h3>
-                    <p class="text-gray-500 font-medium">Autonomous Stair-Climbing Platform</p>
-                </div>
-                <div class="font-mono text-xs font-bold bg-gray-100 px-3 py-1 rounded-full uppercase tracking-wider">
-                    Hardware + Simulation
-                </div>
-            </div>
-            
-            <!-- HARDWARE GALLERY -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-                <!-- Front View -->
-                <div class="flex flex-col gap-2">
-                    <div class="img-container aspect-video">
-                        <img src="hexapod-chassis-front.jpg" alt="Front Chassis">
-                    </div>
-                    <div class="font-mono text-[10px] text-gray-400 uppercase tracking-widest pl-1">SYS_CAM_01 // CHASSIS_FRONT</div>
-                </div>
-                
-                <!-- Electronics View -->
-                <div class="flex flex-col gap-2">
-                    <div class="img-container aspect-video">
-                        <img src="hexapod-electronics-hub.jpg" alt="Electronics Hub">
-                    </div>
-                    <div class="font-mono text-[10px] text-gray-400 uppercase tracking-widest pl-1">SYS_CAM_02 // PCA9685_HUB</div>
-                </div>
-
-                <!-- Live Demo Video -->
-                <div class="flex flex-col gap-2">
-                    <div class="img-container aspect-video border-2 border-[#FF4500]">
-                        <video autoplay loop muted playsinline>
-                            <source src="hexapod-sim-demo.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="font-mono text-[10px] accent-cmf uppercase tracking-widest pl-1 font-bold">● LIVE_TELEMETRY // ACTUATION_TEST</div>
-                </div>
-            </div>
-
-            <!-- SIMULATION GALLERY -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
-                <div class="flex flex-col gap-2">
-                    <div class="img-container aspect-[16/9]">
-                        <img src="hexapod-telemetry-wave.jpg" alt="Wave Gait Telemetry">
-                    </div>
-                    <div class="font-mono text-[10px] text-gray-400 uppercase tracking-widest pl-1">SIM_DATA // WAVE_GAIT_ANALYSIS</div>
-                </div>
-                <div class="flex flex-col gap-2">
-                    <div class="img-container aspect-[16/9]">
-                        <img src="hexapod-telemetry-tripod.jpg" alt="Tripod Gait Telemetry">
-                    </div>
-                    <div class="font-mono text-[10px] text-gray-400 uppercase tracking-widest pl-1">SIM_DATA // TRIPOD_GAIT_ANALYSIS</div>
-                </div>
-            </div>
-
-            <!-- TE STYLE SPECS -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 font-mono text-xs">
-                <div class="bg-gray-50 p-4 rounded-xl border border-gray-100 flex flex-col justify-between h-24">
-                    <span class="text-gray-400">KINEMATICS</span>
-                    <span class="font-bold">L1:35 / L2:95 / L3:105</span>
-                </div>
-                <div class="bg-gray-50 p-4 rounded-xl border border-gray-100 flex flex-col justify-between h-24">
-                    <span class="text-gray-400">CONTROL</span>
-                    <span class="font-bold">50Hz (RPi 4)</span>
-                </div>
-                <div class="bg-gray-50 p-4 rounded-xl border border-gray-100 flex flex-col justify-between h-24">
-                    <span class="text-gray-400">ACTUATION</span>
-                    <span class="font-bold">18x MG996R</span>
-                </div>
-                <div class="bg-cmf text-white p-4 rounded-xl flex flex-col justify-between h-24 shadow-lg shadow-orange-500/20">
-                    <span class="opacity-80">TORQUE_LIMIT</span>
-                    <span class="font-bold">11.0 kg-cm</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECONDARY PROJECTS -->
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-        <div class="bg-white rounded-3xl p-8 tech-border hover:shadow-lg transition-shadow">
-            <div class="font-mono text-xs font-bold bg-orange-100 text-orange-600 px-3 py-1 rounded-full uppercase tracking-wider w-fit mb-6">
-                Embedded Sensors
-            </div>
-            <h3 class="text-xl font-bold tracking-tight mb-3">Food Spoilage Monitor</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">
-                Environmental tracking system utilizing Arduino, DHT11, and VOC gas sensors for continuous data acquisition and analysis.
-            </p>
-        </div>
-
-        <div class="bg-white rounded-3xl p-8 tech-border hover:shadow-lg transition-shadow">
-            <div class="font-mono text-xs font-bold bg-blue-100 text-blue-600 px-3 py-1 rounded-full uppercase tracking-wider w-fit mb-6">
-                Aerodynamics
-            </div>
-            <h3 class="text-xl font-bold tracking-tight mb-3">RC Aircraft Assembly</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">
-                Fixed-wing structural assembly featuring brushless motor integration and precise static center-of-gravity balancing.
-            </p>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="text-center pb-12 pt-8">
-        <a href="mailto:zaeemmohammad76@gmail.com" class="inline-flex items-center justify-center bg-black text-white font-medium px-8 py-4 rounded-full hover:scale-105 transition-transform">
-            Get in touch
-        </a>
-        <div class="mt-8 font-mono text-xs text-gray-400 space-x-4">
-            <a href="https://github.com/zaeem-mohd" class="hover:text-black transition-colors">GITHUB</a>
-            <span>//</span>
-            <span>+91-7795529508</span>
-        </div>
-    </footer>
+    <!-- ADD YOUR PROJECTS BELOW THIS LINE -->
 
 </body>
 </html>
