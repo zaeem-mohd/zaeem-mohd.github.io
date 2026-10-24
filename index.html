@@ -1,318 +1,71 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zaeem Mohammed | Mechatronics & Robotics Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        :root {
+            --bg: #FFFFFF;
+            --text: #000000;
+            --accent: #E60000;
+            --font-main: 'Courier New', Courier, monospace; 
         }
-        .animate-fade-in { animation: fadeIn 0.8s ease-out forwards; }
-        .glass-card {
-            background: rgba(17, 24, 39, 0.75);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: var(--font-main);
+            margin: 0;
+            padding: 5%;
         }
-        .glass-card:hover {
-            border-color: rgba(59, 130, 246, 0.4);
+        header {
+            border-bottom: 2px solid var(--text);
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+        h1, h2 {
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+        .accent {
+            color: var(--accent);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            border: 1px solid var(--text);
+            padding: 20px;
+            transition: border-color 0.2s ease;
+        }
+        .card:hover {
+            border-color: var(--accent);
+        }
+        img {
+            max-width: 100%;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+        img:hover {
+            filter: grayscale(0%);
         }
     </style>
 </head>
-<body class="bg-gray-950 text-gray-100 font-sans min-h-screen selection:bg-blue-500 selection:text-white">
-
-    <!-- Navigation -->
-    <nav class="sticky top-0 z-50 glass-card border-b border-gray-800/50 bg-gray-950/80 backdrop-blur-md">
-        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-lg font-bold tracking-tight text-white hover:text-blue-400 transition-colors">
-                Zaeem Mohammed<span class="text-blue-500">.</span>
-            </a>
-            <div class="flex items-center space-x-6 text-sm font-medium text-gray-400">
-                <a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a>
-                <a href="#skills" class="hover:text-blue-400 transition-colors">Skills</a>
-                <a href="#education" class="hover:text-blue-400 transition-colors">Education</a>
-                <a href="mailto:zaeemmohammad76@gmail.com" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-lg transition-all duration-300">
-                    Contact
-                </a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="max-w-5xl mx-auto px-6 pt-16 pb-12 animate-fade-in">
-        <div class="inline-flex items-center space-x-2 px-3 py-1 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-full text-xs font-semibold mb-6">
-            <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
-            <span>Available for 3–6 Month Internship (Starts Dec 28, 2026)</span>
-        </div>
-        
-        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
-            Mechatronics & <br/>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-cyan-400">
-                Robotics Engineer
-            </span>
-        </h1>
-        
-        <p class="text-base md:text-lg text-gray-400 max-w-3xl mb-8 leading-relaxed">
-            Final-year Mechatronics Engineering student at Mangalore Institute of Technology & Engineering. Specialized in 18-DOF legged robotics, custom 3-DOF inverse kinematics solvers, PyBullet physics simulation, embedded Linux (RPi 4), and industrial automation (PLC/SCADA).
-        </p>
-        
-        <div class="flex flex-wrap items-center gap-4">
-            <a href="mailto:zaeemmohammad76@gmail.com" class="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-blue-600/25">
-                Contact Me
-            </a>
-            <a href="https://github.com/zaeem-mohd" target="_blank" class="px-6 py-3 glass-card hover:bg-gray-800 text-gray-200 font-semibold rounded-xl transition-all duration-300">
-                GitHub Profile
-            </a>
-            <a href="https://linkedin.com/in/zaeem-mohammed-17a882" target="_blank" class="px-6 py-3 border border-gray-800 hover:border-gray-700 text-gray-400 hover:text-gray-200 font-semibold rounded-xl transition-all duration-300">
-                LinkedIn
-            </a>
-        </div>
+<body>
+    <header>
+        <h1>Portfolio <span class="accent">[2026]</span></h1>
+        <p>Selected_Works</p>
     </header>
-
-    <!-- Main Content -->
-    <main class="max-w-5xl mx-auto px-6 py-6" id="projects">
-        
-        <div class="flex items-center space-x-4 mb-8">
-            <h2 class="text-2xl font-bold tracking-tight text-white">Featured Engineering Projects</h2>
-            <div class="h-px bg-gray-800 flex-1"></div>
+    <section class="grid">
+        <div class="card">
+            <h2>Project_01</h2>
+            <img src="project-01-main-view.jpg" alt="Project 1">
+            <p>System Architecture.</p>
         </div>
-
-        <!-- MAJOR CAPSTONE PROJECT -->
-        <section class="glass-card rounded-2xl p-8 mb-12 shadow-2xl transition-all duration-300">
-            <div class="flex flex-wrap items-center justify-between gap-2 mb-6">
-                <span class="text-xs font-bold uppercase tracking-wider text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20">
-                    Final Year Capstone Project
-                </span>
-                <div class="flex flex-wrap gap-2 text-xs">
-                    <span class="bg-gray-800 text-gray-300 px-2.5 py-1 rounded-md">Raspberry Pi 4</span>
-                    <span class="bg-gray-800 text-gray-300 px-2.5 py-1 rounded-md">Python / NumPy</span>
-                    <span class="bg-gray-800 text-gray-300 px-2.5 py-1 rounded-md">PyBullet</span>
-                    <span class="bg-gray-800 text-gray-300 px-2.5 py-1 rounded-md">3D Printed Hardware</span>
-                </div>
-            </div>
-            
-            <h3 class="text-2xl md:text-3xl font-bold mb-4 text-white">Spider-Inspired 18-DOF Self Stair-Climbing Hexapod Robot</h3>
-            
-            <p class="text-gray-300 mb-6 leading-relaxed text-sm md:text-base">
-                Designed, simulated, and fabricated a 3D-printed 18-DOF hexapod robot capable of autonomous stair-climbing and multi-level floor movement. Developed a closed-form inverse kinematics solver and multi-body PyBullet simulation to analyze dynamic torque loads across variable payloads (0–2 kg) and validate MG996R servo capacity prior to hardware assembly.
-            </p>
-
-            <!-- Technical Spec Grid -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 text-xs font-mono">
-                <div class="bg-gray-900/80 p-3.5 rounded-xl border border-gray-800">
-                    <span class="text-gray-500 block mb-1">Leg Link Geometry</span>
-                    <strong class="text-blue-400">L1=35mm, L2=95mm, L3=105mm</strong>
-                </div>
-                <div class="bg-gray-900/80 p-3.5 rounded-xl border border-gray-800">
-                    <span class="text-gray-500 block mb-1">Control Loop Rate</span>
-                    <strong class="text-blue-400">50 Hz (Python on RPi 4)</strong>
-                </div>
-                <div class="bg-gray-900/80 p-3.5 rounded-xl border border-gray-800">
-                    <span class="text-gray-500 block mb-1">Actuation Architecture</span>
-                    <strong class="text-blue-400">18x MG996R + 2x PCA9685</strong>
-                </div>
-                <div class="bg-gray-900/80 p-3.5 rounded-xl border border-gray-800">
-                    <span class="text-gray-500 block mb-1">Sensor Bus (I2C)</span>
-                    <strong class="text-blue-400">BNO055 IMU + VL53L0X ToF</strong>
-                </div>
-            </div>
-
-            <!-- Video / Media Showcase Grid -->
-            <div class="grid md:grid-cols-2 gap-6 mb-8">
-                <div class="bg-gray-900/90 border border-gray-800/80 rounded-xl p-4 flex flex-col justify-center items-center text-center min-h-[200px]">
-                    <div class="text-blue-400 text-sm font-semibold mb-1">📹 3D-Printed Hardware Assembly</div>
-                    <p class="text-gray-500 text-xs mb-3">18-DOF physical hexapod with Raspberry Pi 4 control & power distribution setup.</p>
-                    <span class="text-xs bg-gray-800 text-gray-400 px-3 py-1 rounded font-mono">[ Drop Hardware Photo / GIF ]</span>
-                </div>
-                <div class="bg-gray-900/90 border border-gray-800/80 rounded-xl p-4 flex flex-col justify-center items-center text-center min-h-[200px]">
-                    <div class="text-indigo-400 text-sm font-semibold mb-1">🖥️ PyBullet Physics Simulation</div>
-                    <p class="text-gray-500 text-xs mb-3">Real-time gait switching (Wave, Tripod, Ripple) and 120mm step-up sequence.</p>
-                    <span class="text-xs bg-gray-800 text-gray-400 px-3 py-1 rounded font-mono">[ Drop PyBullet GIF ]</span>
-                </div>
-            </div>
-
-            <!-- Engineering Features -->
-            <div class="grid md:grid-cols-3 gap-4 mb-8 text-xs">
-                <div class="bg-gray-900/50 p-4 rounded-xl border border-gray-800">
-                    <strong class="text-blue-400 block mb-1 text-sm">Gait Engine & Control</strong>
-                    <p class="text-gray-400">Phase-based scheduler (N=200 ticks/cycle). Supports Wave, Tripod, and Ripple gaits with 120mm stride length and 80mm step clearance.</p>
-                </div>
-                <div class="bg-gray-900/50 p-4 rounded-xl border border-gray-800">
-                    <strong class="text-blue-400 block mb-1 text-sm">Static Torque Modeling</strong>
-                    <p class="text-gray-400">Calculates per-joint torque limits dynamically. Sets a 70% derating threshold (7.7 kg·cm) against MG996R stall limits (11.0 kg·cm) for safety.</p>
-                </div>
-                <div class="bg-gray-900/50 p-4 rounded-xl border border-gray-800">
-                    <strong class="text-blue-400 block mb-1 text-sm">Web Telemetry Dashboard</strong>
-                    <p class="text-gray-400">Flask web interface hosted on Raspberry Pi over Wi-Fi for real-time joint torque monitoring, gait switching, and latching E-Stop safety routines.</p>
-                </div>
-            </div>
-
-            <!-- Inverse Kinematics Code Snippet -->
-            <div class="bg-gray-900 border border-gray-800 rounded-xl p-4 overflow-x-auto">
-                <div class="flex items-center justify-between text-xs text-gray-500 mb-2 border-b border-gray-800 pb-2">
-                    <span class="font-mono text-gray-400">kinematics/analytical_ik.py</span>
-                    <span>Closed-Form Law of Cosines</span>
-                </div>
-                <pre class="text-xs font-mono text-blue-300 leading-relaxed"><code>import numpy as np
-
-def calculate_leg_ik(x, y, z, L1=35.0, L2=95.0, L3=105.0):
-    """Calculates 3-DOF joint angles (Coxa, Femur, Tibia) for a single leg in mm."""
-    theta1 = np.arctan2(y, x)
-    r = np.sqrt(x**2 + y**2) - L1
-    d = np.sqrt(r**2 + z**2)
-    
-    # Law of Cosines for Femur and Tibia angles
-    cos_theta3 = (d**2 - L2**2 - L3**2) / (2 * L2 * L3)
-    theta3 = np.arccos(np.clip(cos_theta3, -1.0, 1.0))
-    
-    beta = np.arctan2(z, r)
-    alpha = np.arccos((L2**2 + d**2 - L3**2) / (2 * L2 * d))
-    theta2 = beta + alpha
-    
-    return np.degrees([theta1, theta2, theta3 - np.pi])</code></pre>
-            </div>
-        </section>
-
-        <!-- SECONDARY PROJECTS GRID -->
-        <div class="grid md:grid-cols-2 gap-8 mb-16">
-            
-            <!-- Food Spoilage Monitoring -->
-            <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
-                <div>
-                    <div class="text-xs text-cyan-400 font-bold uppercase tracking-wider mb-2">Embedded Systems & Sensors</div>
-                    <h4 class="text-xl font-bold mb-3 text-white">AI-Enabled Food Spoilage Monitoring System</h4>
-                    <p class="text-gray-400 text-sm mb-4 leading-relaxed">
-                        Built an embedded environmental monitoring unit on Arduino integrating VOC gas sensors, DHT11 temperature, and humidity sensors for continuous real-time data acquisition and spoilage trend tracking.
-                    </p>
-                </div>
-                <div class="bg-gray-900 border border-gray-800 rounded-lg h-32 flex items-center justify-center text-gray-500 text-xs font-mono">
-                    [ Arduino Circuit / Sensor Setup Photo ]
-                </div>
-            </div>
-
-            <!-- RC Aircraft Workshop -->
-            <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
-                <div>
-                    <div class="text-xs text-indigo-400 font-bold uppercase tracking-wider mb-2">Aerodynamics & Flight Hardware</div>
-                    <h4 class="text-xl font-bold mb-3 text-white">Fixed-Wing RC Aircraft Assembly & CG Tuning</h4>
-                    <p class="text-gray-400 text-sm mb-4 leading-relaxed">
-                        Collaborated in a workshop team to construct a functional RC aircraft. Selected wing airfoils for optimal lift-to-drag ratio, integrated brushless motors, ESCs, and multi-channel RC receivers, and performed static center-of-gravity balancing.
-                    </p>
-                </div>
-                <div class="bg-gray-900 border border-gray-800 rounded-lg h-32 flex items-center justify-center text-gray-500 text-xs font-mono">
-                    [ RC Aircraft Photo / Workshop Assembly ]
-                </div>
-            </div>
-
+        <div class="card">
+            <h2>Project_02</h2>
+            <img src="project-02-product-mockup.jpg" alt="Project 2">
+            <p>Hardware Integration.</p>
         </div>
-
-        <!-- TECHNICAL SKILLS MATRIX -->
-        <section id="skills" class="mb-16">
-            <div class="flex items-center space-x-4 mb-8">
-                <h2 class="text-2xl font-bold tracking-tight text-white">Technical Capabilities</h2>
-                <div class="h-px bg-gray-800 flex-1"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="glass-card p-5 rounded-xl">
-                    <h5 class="text-blue-400 font-bold text-sm mb-3">Industrial Automation</h5>
-                    <ul class="text-sm text-gray-300 space-y-2">
-                        <li>• PLC Programming & Ladder Logic</li>
-                        <li>• SCADA System Architecture</li>
-                        <li>• Hardware Description Languages (HDL)</li>
-                        <li>• Relay Logic & Industrial Control</li>
-                    </ul>
-                </div>
-
-                <div class="glass-card p-5 rounded-xl">
-                    <h5 class="text-blue-400 font-bold text-sm mb-3">Robotics & Controls</h5>
-                    <ul class="text-sm text-gray-300 space-y-2">
-                        <li>• Closed-Form Inverse Kinematics</li>
-                        <li>• Gait Scheduler (Wave, Tripod, Ripple)</li>
-                        <li>• PyBullet Physics Simulation</li>
-                        <li>• Static Joint Torque Analysis</li>
-                    </ul>
-                </div>
-
-                <div class="glass-card p-5 rounded-xl">
-                    <h5 class="text-blue-400 font-bold text-sm mb-3">Embedded & Computing</h5>
-                    <ul class="text-sm text-gray-300 space-y-2">
-                        <li>• Raspberry Pi 4 (Headless Linux/SSH)</li>
-                        <li>• Arduino Microcontrollers</li>
-                        <li>• Sensor Integration (IMU, ToF, Gas)</li>
-                        <li>• I2C Bus Communication & PWM Drivers</li>
-                    </ul>
-                </div>
-
-                <div class="glass-card p-5 rounded-xl">
-                    <h5 class="text-blue-400 font-bold text-sm mb-3">Programming & Software</h5>
-                    <ul class="text-sm text-gray-300 space-y-2">
-                        <li>• Python (NumPy, Matplotlib, Flask)</li>
-                        <li>• C / C++ / Assembly</li>
-                        <li>• MATLAB / Simulink / Ansys</li>
-                        <li>• Git / GitHub Version Control</li>
-                    </ul>
-                </div>
-
-                <div class="glass-card p-5 rounded-xl">
-                    <h5 class="text-blue-400 font-bold text-sm mb-3">Mechanical CAD</h5>
-                    <ul class="text-sm text-gray-300 space-y-2">
-                        <li>• SolidWorks & Autodesk Fusion 360</li>
-                        <li>• AutoCAD & Siemens NX CAD</li>
-                        <li>• Peaucellier Straight-Line Linkages</li>
-                        <li>• 3D Printing & Fabrication</li>
-                    </ul>
-                </div>
-
-                <div class="glass-card p-5 rounded-xl">
-                    <h5 class="text-blue-400 font-bold text-sm mb-3">Certifications</h5>
-                    <ul class="text-sm text-gray-300 space-y-2">
-                        <li>• Intro to AI & R Programming (Infosys)</li>
-                        <li>• Automation Explorer (UiPath, 2024)</li>
-                        <li>• EV Model-Based Design (CoreEL, 2024)</li>
-                        <li>• e-Yantra Challenge Round 3 (2025)</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- EDUCATION SECTION -->
-        <section id="education" class="mb-16">
-            <div class="flex items-center space-x-4 mb-8">
-                <h2 class="text-2xl font-bold tracking-tight text-white">Education</h2>
-                <div class="h-px bg-gray-800 flex-1"></div>
-            </div>
-
-            <div class="glass-card rounded-2xl p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
-                <div>
-                    <h4 class="text-xl font-bold text-white">B.E. in Mechatronics Engineering</h4>
-                    <p class="text-gray-400 text-sm">Mangalore Institute of Technology & Engineering | Graduating 2027</p>
-                </div>
-                <div class="text-xs bg-blue-500/10 text-blue-400 border border-blue-500/20 px-4 py-2 rounded-lg font-semibold w-fit">
-                    CGPA: 6.98
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="border-t border-gray-900 bg-gray-950 py-12">
-        <div class="max-w-5xl mx-auto px-6 text-center">
-            <h3 class="text-2xl font-bold text-white mb-2">Let’s Connect</h3>
-            <p class="text-gray-400 text-sm mb-6">Seeking 3–6 month robotics / automation internship in Bengaluru starting December 28, 2026.</p>
-            <div class="flex justify-center items-center space-x-6 text-sm">
-                <a href="mailto:zaeemmohammad76@gmail.com" class="text-blue-400 hover:text-blue-300">zaeemmohammad76@gmail.com</a>
-                <span class="text-gray-700">|</span>
-                <span class="text-gray-400">+91-7795529508</span>
-                <span class="text-gray-700">|</span>
-                <a href="https://github.com/zaeem-mohd" target="_blank" class="text-blue-400 hover:text-blue-300">GitHub</a>
-            </div>
-            <p class="text-xs text-gray-600 mt-8">© 2026 Zaeem Mohammed. Built with Tailwind CSS.</p>
-        </div>
-    </footer>
-
+    </section>
 </body>
 </html>
