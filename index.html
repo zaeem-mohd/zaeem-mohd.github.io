@@ -3,169 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZAEEM_MOHAMMED // PORTFOLIO</title>
+    <title>Zaeem Mohammed | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
         
         body {
-            background-color: #ffffff;
-            color: #000000;
-            font-family: 'Space Mono', monospace;
-            background-image: radial-gradient(#d4d4d4 1px, transparent 0);
-            background-size: 20px 20px;
+            background-color: #F5F5F7; /* Apple off-white */
+            color: #1D1D1F;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
         }
 
-        .border-n { border: 2px solid #000000; }
-        .border-n-b { border-bottom: 2px solid #000000; }
-        .border-n-t { border-top: 2px solid #000000; }
-        
-        .bg-n { background-color: #000000; color: #ffffff; }
-        .text-red-n { color: #e60000; }
-        .hover-red:hover { color: #e60000; border-color: #e60000; }
-        
-        .img-bw { filter: grayscale(100%) contrast(1.15); transition: all 0.3s ease; }
-        .img-bw:hover { filter: grayscale(0%) contrast(1); }
-        
-        .marquee {
-            width: 100%;
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .accent-cmf {
+            color: #FF4500; /* CMF vibrant orange/red */
+        }
+        .bg-cmf {
+            background-color: #FF4500;
+        }
+
+        /* Technical border styling (Teenage Engineering) */
+        .tech-border {
+            border: 1px solid #E5E5EA;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        /* Smooth image containers */
+        .img-container {
             overflow: hidden;
-            white-space: nowrap;
-            background: #000;
-            color: #fff;
-            padding: 8px 0;
-            text-transform: uppercase;
-            font-weight: 700;
-            font-size: 0.9rem;
-        }
-        .marquee span {
-            display: inline-block;
-            animation: scroll 20s linear infinite;
-        }
-        @keyframes scroll {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
+            background: #E5E5EA;
+            border-radius: 12px;
         }
         
-        /* Brutalist Scrollbar */
-        ::-webkit-scrollbar { width: 12px; }
-        ::-webkit-scrollbar-track { background: #fff; border-left: 2px solid #000; }
-        ::-webkit-scrollbar-thumb { background: #000; }
-        ::-webkit-scrollbar-thumb:hover { background: #e60000; }
+        .img-container img, .img-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Fixes the stretching */
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .img-container:hover img {
+            transform: scale(1.03);
+        }
     </style>
 </head>
-<body class="p-4 md:p-8 uppercase tracking-tighter">
+<body class="p-4 md:p-8 lg:max-w-7xl lg:mx-auto">
 
-    <!-- NAVIGATION -->
-    <nav class="flex justify-between items-center mb-8 bg-white border-n p-4 shadow-[6px_6px_0_0_#000]">
-        <div class="font-bold text-xl md:text-2xl tracking-tighter">ZAEEM_MOHAMMED <span class="text-red-n">.</span></div>
-        <div class="hidden md:flex space-x-6 text-sm font-bold">
-            <a href="#projects" class="hover-red">Projects</a>
-            <a href="#skills" class="hover-red">Skills</a>
-            <a href="mailto:zaeemmohammad76@gmail.com" class="hover-red">Contact</a>
+    <!-- NAVIGATION (Apple style floating pill) -->
+    <nav class="flex justify-between items-center mb-12 bg-white/80 backdrop-blur-md rounded-full px-6 py-4 tech-border sticky top-4 z-50">
+        <div class="font-semibold text-lg tracking-tight">Zaeem Mohammed</div>
+        <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-500">
+            <a href="#projects" class="hover:text-black transition-colors">Projects</a>
+            <a href="https://github.com/zaeem-mohd" target="_blank" class="hover:text-black transition-colors">GitHub</a>
+            <a href="mailto:zaeemmohammad76@gmail.com" class="hover:text-black transition-colors">Contact</a>
         </div>
     </nav>
 
     <!-- HEADER / HERO -->
-    <header class="mb-12 bg-white border-n p-6 shadow-[6px_6px_0_0_#000]">
-        <div class="inline-block bg-black text-white px-2 py-1 text-xs mb-4 font-bold border border-black">
-            [ STATUS: AVAILABLE_DEC_2026 ]
+    <header class="mb-16">
+        <div class="font-mono text-xs font-bold tracking-widest text-gray-400 mb-4 uppercase">
+            Status: Available Dec 2026
         </div>
-        <h1 class="text-4xl md:text-6xl font-bold leading-none mb-6 tracking-tighter">
-            MECHATRONICS_<br>
-            <span class="text-red-n">ROBOTICS_</span>ENGINEER
+        <h1 class="text-5xl md:text-7xl font-bold tracking-tighter mb-6 leading-tight">
+            Mechatronics <br>
+            <span class="accent-cmf">& Robotics</span> Engineer.
         </h1>
-        <p class="text-sm md:text-base max-w-2xl lowercase normal-case leading-relaxed font-bold text-gray-800">
-            final-year mechatronics engineering student at mite. specialized in 18-dof legged robotics, custom 3-dof inverse kinematics solvers, embedded linux (rpi 4), and industrial automation (plc/scada).
+        <p class="text-lg md:text-xl text-gray-500 max-w-2xl leading-relaxed font-medium mb-8">
+            Specializing in 18-DOF legged robotics, custom inverse kinematics solvers, embedded Linux, and industrial automation. Final-year engineering student at MITE.
         </p>
-        <div class="mt-8 flex flex-wrap gap-4">
-            <a href="mailto:zaeemmohammad76@gmail.com" class="border-n px-6 py-2.5 bg-black text-white hover:bg-white hover:text-black transition-colors font-bold text-sm tracking-tight">INIT_CONTACT</a>
-            <a href="https://github.com/zaeem-mohd" target="_blank" class="border-n px-6 py-2.5 bg-white text-black hover:text-red-n transition-colors font-bold text-sm tracking-tight">GITHUB_PROFILE</a>
-        </div>
     </header>
 
-    <!-- MARQUEE -->
-    <div class="marquee border-n mb-12 shadow-[6px_6px_0_0_#000]">
-        <span>+ + + INVERSE_KINEMATICS // EMBEDDED_SYSTEMS // CAD_MODELING // PYTHON // C++ // SCADA // PYBULLET // 3D_PRINTING + + + INVERSE_KINEMATICS // EMBEDDED_SYSTEMS // CAD_MODELING // PYTHON // C++ // SCADA // PYBULLET // 3D_PRINTING + + +</span>
-    </div>
-
     <!-- MAIN PROJECT -->
-    <section id="projects" class="mb-12">
-        <h2 class="text-2xl font-bold mb-4 border-n-b pb-2">01 // MAJOR_CAPSTONE_PROJECT</h2>
+    <section id="projects" class="mb-16">
+        <div class="font-mono text-xs font-bold tracking-widest text-gray-400 mb-4 uppercase">Selected Work 01</div>
         
-        <div class="bg-white border-n p-6 shadow-[6px_6px_0_0_#000] mb-8">
-            <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-6 border-n-b pb-4 gap-2">
-                <h3 class="text-xl md:text-3xl font-bold tracking-tight">18-DOF HEXAPOD [STAIR_CLIMBER]</h3>
-                <span class="bg-black text-white px-2 py-1 text-xs w-fit font-bold">HARDWARE + SIM</span>
+        <div class="bg-white rounded-3xl p-6 md:p-10 tech-border">
+            <div class="flex flex-col md:flex-row justify-between items-start mb-8 gap-4">
+                <div>
+                    <h3 class="text-3xl font-bold tracking-tight mb-2">18-DOF Hexapod</h3>
+                    <p class="text-gray-500 font-medium">Autonomous Stair-Climbing Platform</p>
+                </div>
+                <div class="font-mono text-xs font-bold bg-gray-100 px-3 py-1 rounded-full uppercase tracking-wider">
+                    Hardware + Simulation
+                </div>
             </div>
             
-            <p class="text-sm normal-case font-bold mb-8 max-w-3xl text-gray-800">
-                designed, simulated, and fabricated a 3d-printed 18-dof hexapod robot capable of autonomous stair-climbing. developed closed-form inverse kinematics solver and dynamic torque modeling to validate mg996r servos against variable payloads.
-            </p>
-
             <!-- HARDWARE GALLERY -->
-            <h4 class="font-bold mb-4 text-red-n">> HARDWARE_ASSEMBLY</h4>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
                 <!-- Front View -->
-                <div class="border-n p-2 bg-gray-50">
-                    <img src="hexapod-chassis-front.jpg" class="w-full h-48 object-cover img-bw border-n bg-white" alt="Front Chassis">
-                    <div class="text-xs font-bold mt-2 text-center text-black">CHASSIS_FRONT_VIEW</div>
-                </div>
-                <!-- Electronics View -->
-                <div class="border-n p-2 bg-gray-50">
-                    <img src="hexapod-electronics-hub.jpg" class="w-full h-48 object-cover img-bw border-n bg-white" alt="Electronics Hub">
-                    <div class="text-xs font-bold mt-2 text-center text-black">ELECTRONICS_PCA9685_HUB</div>
-                </div>
-                <!-- Radial View -->
-                <div class="border-n p-2 bg-gray-50">
-                    <img src="hexapod-top-radial.jpg" class="w-full h-48 object-cover img-bw border-n bg-white" alt="Top Radial Layout">
-                    <div class="text-xs font-bold mt-2 text-center text-black">RADIAL_LEG_LAYOUT</div>
-                </div>
-                <!-- Demo Video -->
-                <div class="border-n p-2 bg-gray-50 md:col-span-2 lg:col-span-3 flex flex-col md:flex-row gap-4 items-center">
-                    <video autoplay loop muted playsinline class="w-full md:w-1/2 h-56 object-cover img-bw border-n bg-white">
-                        <source src="hexapod-sim-demo.mp4" type="video/mp4">
-                    </video>
-                    <div class="w-full md:w-1/2 text-left p-4">
-                        <h5 class="font-bold text-red-n mb-2">> LIVE_DEMO</h5>
-                        <p class="text-xs font-bold normal-case text-gray-800 leading-relaxed">
-                            system test execution. checking multi-channel pwm signaling and high-current power distribution under load.
-                        </p>
+                <div class="flex flex-col gap-2">
+                    <div class="img-container aspect-video">
+                        <img src="hexapod-chassis-front.jpg" alt="Front Chassis">
                     </div>
+                    <div class="font-mono text-[10px] text-gray-400 uppercase tracking-widest pl-1">SYS_CAM_01 // CHASSIS_FRONT</div>
+                </div>
+                
+                <!-- Electronics View -->
+                <div class="flex flex-col gap-2">
+                    <div class="img-container aspect-video">
+                        <img src="hexapod-electronics-hub.jpg" alt="Electronics Hub">
+                    </div>
+                    <div class="font-mono text-[10px] text-gray-400 uppercase tracking-widest pl-1">SYS_CAM_02 // PCA9685_HUB</div>
+                </div>
+
+                <!-- Live Demo Video -->
+                <div class="flex flex-col gap-2">
+                    <div class="img-container aspect-video border-2 border-[#FF4500]">
+                        <video autoplay loop muted playsinline>
+                            <source src="hexapod-sim-demo.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="font-mono text-[10px] accent-cmf uppercase tracking-widest pl-1 font-bold">● LIVE_TELEMETRY // ACTUATION_TEST</div>
                 </div>
             </div>
 
-            <!-- CODE SPECS -->
-            <h4 class="font-bold mb-4 text-red-n">> SYSTEM_SPECS</h4>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs font-bold">
-                <div class="border-n p-3 bg-black text-white hover:bg-white hover:text-black transition-colors">LINK_GEOMETRY:<br>L1=35, L2=95, L3=105</div>
-                <div class="border-n p-3 bg-black text-white hover:bg-white hover:text-black transition-colors">CONTROL_RATE:<br>50 HZ (RPI 4)</div>
-                <div class="border-n p-3 bg-black text-white hover:bg-white hover:text-black transition-colors">ACTUATION:<br>18X MG996R</div>
-                <div class="border-n p-3 bg-black text-white hover:bg-white hover:text-black transition-colors">TORQUE_LIMIT:<br>11.0 KG-CM</div>
+            <!-- SIMULATION GALLERY -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+                <div class="flex flex-col gap-2">
+                    <div class="img-container aspect-[16/9]">
+                        <img src="hexapod-telemetry-wave.jpg" alt="Wave Gait Telemetry">
+                    </div>
+                    <div class="font-mono text-[10px] text-gray-400 uppercase tracking-widest pl-1">SIM_DATA // WAVE_GAIT_ANALYSIS</div>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <div class="img-container aspect-[16/9]">
+                        <img src="hexapod-telemetry-tripod.jpg" alt="Tripod Gait Telemetry">
+                    </div>
+                    <div class="font-mono text-[10px] text-gray-400 uppercase tracking-widest pl-1">SIM_DATA // TRIPOD_GAIT_ANALYSIS</div>
+                </div>
+            </div>
+
+            <!-- TE STYLE SPECS -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 font-mono text-xs">
+                <div class="bg-gray-50 p-4 rounded-xl border border-gray-100 flex flex-col justify-between h-24">
+                    <span class="text-gray-400">KINEMATICS</span>
+                    <span class="font-bold">L1:35 / L2:95 / L3:105</span>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-xl border border-gray-100 flex flex-col justify-between h-24">
+                    <span class="text-gray-400">CONTROL</span>
+                    <span class="font-bold">50Hz (RPi 4)</span>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-xl border border-gray-100 flex flex-col justify-between h-24">
+                    <span class="text-gray-400">ACTUATION</span>
+                    <span class="font-bold">18x MG996R</span>
+                </div>
+                <div class="bg-cmf text-white p-4 rounded-xl flex flex-col justify-between h-24 shadow-lg shadow-orange-500/20">
+                    <span class="opacity-80">TORQUE_LIMIT</span>
+                    <span class="font-bold">11.0 kg-cm</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- OTHER PROJECTS -->
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-        <div class="bg-white border-n p-6 shadow-[6px_6px_0_0_#000]">
-            <h3 class="text-xl font-bold mb-2 tracking-tight">02 // FOOD_SPOILAGE_MONITOR</h3>
-            <p class="text-xs font-bold text-red-n mb-4">EMBEDDED_SENSORS</p>
-            <p class="text-sm normal-case font-bold text-gray-800">embedded environmental tracking using arduino, dht11, and voc gas sensors for continuous data acquisition.</p>
+    <!-- SECONDARY PROJECTS -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+        <div class="bg-white rounded-3xl p-8 tech-border hover:shadow-lg transition-shadow">
+            <div class="font-mono text-xs font-bold bg-orange-100 text-orange-600 px-3 py-1 rounded-full uppercase tracking-wider w-fit mb-6">
+                Embedded Sensors
+            </div>
+            <h3 class="text-xl font-bold tracking-tight mb-3">Food Spoilage Monitor</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+                Environmental tracking system utilizing Arduino, DHT11, and VOC gas sensors for continuous data acquisition and analysis.
+            </p>
         </div>
-        <div class="bg-white border-n p-6 shadow-[6px_6px_0_0_#000]">
-            <h3 class="text-xl font-bold mb-2 tracking-tight">03 // RC_AIRCRAFT_ASSEMBLY</h3>
-            <p class="text-xs font-bold text-red-n mb-4">AERODYNAMICS</p>
-            <p class="text-sm normal-case font-bold text-gray-800">fixed-wing structural assembly, brushless motor integration, and static center-of-gravity balancing.</p>
+
+        <div class="bg-white rounded-3xl p-8 tech-border hover:shadow-lg transition-shadow">
+            <div class="font-mono text-xs font-bold bg-blue-100 text-blue-600 px-3 py-1 rounded-full uppercase tracking-wider w-fit mb-6">
+                Aerodynamics
+            </div>
+            <h3 class="text-xl font-bold tracking-tight mb-3">RC Aircraft Assembly</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+                Fixed-wing structural assembly featuring brushless motor integration and precise static center-of-gravity balancing.
+            </p>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="border-n-t pt-8 pb-12 text-center font-bold text-sm bg-white">
-        <p class="mb-4">SYSTEM_READY // INITIATE_INTERNSHIP_CONTACT</p>
-        <a href="mailto:zaeemmohammad76@gmail.com" class="text-red-n hover:underline transition-all">ZAEEMMOHAMMAD76@GMAIL.COM</a> //
-        <span class="text-gray-800">+91-7795529508</span> //
-        <a href="https://github.com/zaeem-mohd" target="_blank" class="hover-red hover:underline transition-all">GITHUB</a>
+    <footer class="text-center pb-12 pt-8">
+        <a href="mailto:zaeemmohammad76@gmail.com" class="inline-flex items-center justify-center bg-black text-white font-medium px-8 py-4 rounded-full hover:scale-105 transition-transform">
+            Get in touch
+        </a>
+        <div class="mt-8 font-mono text-xs text-gray-400 space-x-4">
+            <a href="https://github.com/zaeem-mohd" class="hover:text-black transition-colors">GITHUB</a>
+            <span>//</span>
+            <span>+91-7795529508</span>
+        </div>
     </footer>
 
 </body>
