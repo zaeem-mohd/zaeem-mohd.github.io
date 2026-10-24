@@ -6,11 +6,10 @@
     <title>Zaeem Mohammed | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Fonts: Inter for clean Apple aesthetic, JetBrains Mono for TE technical feel */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
         
         body {
-            background-color: #F5F5F7; /* Apple Off-White */
+            background-color: #F5F5F7;
             color: #1D1D1F;
             font-family: 'Inter', sans-serif;
             -webkit-font-smoothing: antialiased;
@@ -20,210 +19,161 @@
             font-family: 'JetBrains Mono', monospace;
         }
 
-        /* CMF by Nothing Accent Color */
-        .text-cmf { color: #FF4500; }
+        .accent-cmf { color: #FF4500; }
         .bg-cmf { background-color: #FF4500; }
-        .border-cmf { border-color: #FF4500; }
 
-        /* TE Technical Borders */
         .tech-border {
             border: 1px solid #E5E5EA;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
         }
-        
-        .tech-grid-item {
-            border: 1px solid #E5E5EA;
-            background-color: #FFFFFF;
-        }
 
-        /* Image Containers */
-        .media-container {
+        .img-container {
             overflow: hidden;
             background: #E5E5EA;
-            border-radius: 8px; /* Slightly tighter radius for technical elements */
-            border: 1px solid #D1D1D6;
+            border-radius: 12px;
         }
         
-        .media-container img, .media-container video {
+        .img-container img, .img-container video {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s ease;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .media-container:hover img, .media-container:hover video {
-            transform: scale(1.02);
+        .img-container:hover img {
+            transform: scale(1.03);
         }
     </style>
 </head>
-<body class="p-4 md:p-8 lg:max-w-6xl lg:mx-auto">
+<body class="p-4 md:p-8 lg:max-w-7xl lg:mx-auto">
 
-    <!-- NAVIGATION (Apple floating style) -->
-    <nav class="flex justify-between items-center mb-20 bg-white/80 backdrop-blur-lg rounded-full px-8 py-4 tech-border sticky top-4 z-50">
-        <div class="font-bold text-lg tracking-tight">Zaeem Mohammed</div>
-        <div class="space-x-8 text-sm font-medium text-gray-500 hidden md:block">
+    <nav class="flex justify-between items-center mb-12 bg-white/80 backdrop-blur-md rounded-full px-6 py-4 tech-border sticky top-4 z-50">
+        <div class="font-semibold text-lg tracking-tight">Zaeem Mohammed</div>
+        <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-500">
             <a href="#projects" class="hover:text-black transition-colors">Projects</a>
+            <a href="https://github.com/zaeem-mohd" target="_blank" class="hover:text-black transition-colors">GitHub</a>
             <a href="mailto:zaeemmohammad76@gmail.com" class="hover:text-black transition-colors">Contact</a>
         </div>
     </nav>
 
-    <!-- HEADER / HERO -->
-    <header class="mb-24 mt-12">
-        <div class="font-mono text-xs font-bold tracking-widest text-gray-400 mb-6 uppercase">
-            [ Status: Available Dec 2026 ]
+    <header class="mb-16">
+        <div class="font-mono text-xs font-bold tracking-widest text-gray-400 mb-4 uppercase">
+            Status: Available Dec 2026
         </div>
-        <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter mb-8 leading-[1.05]">
+        <h1 class="text-5xl md:text-7xl font-bold tracking-tighter mb-6 leading-tight">
             Mechatronics <br>
-            <span class="text-cmf">& Robotics</span> Engineer.
+            <span class="accent-cmf">& Robotics</span> Engineer.
         </h1>
-        <p class="text-xl md:text-2xl text-gray-500 max-w-3xl leading-relaxed font-medium">
+        <p class="text-lg md:text-xl text-gray-500 max-w-2xl leading-relaxed font-medium mb-8">
             Specializing in 18-DOF legged robotics, custom inverse kinematics solvers, embedded Linux, and industrial automation. Final-year engineering student at MITE.
         </p>
     </header>
 
-    <!-- MAJOR PROJECT SECTION -->
-    <section id="projects" class="mb-20">
-        <!-- Section Header -->
-        <div class="flex items-center gap-4 mb-6">
-            <h2 class="font-mono text-sm font-bold tracking-widest text-black uppercase">01 // Major Project</h2>
-            <div class="h-[1px] bg-gray-300 flex-grow"></div>
-        </div>
+    <section id="projects" class="mb-16">
+        <div class="font-mono text-xs font-bold tracking-widest text-gray-400 mb-4 uppercase">Selected Work 01</div>
         
-        <!-- Main Project Card (Apple smooth outer, TE technical inner) -->
-        <div class="bg-white rounded-[2rem] p-6 md:p-10 tech-border">
-            
-            <!-- Project Title & Badge -->
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
-                <h3 class="text-3xl md:text-4xl font-bold tracking-tight">18-DOF Hexapod <span class="text-gray-400 font-normal">[Autonomous Stair-Climbing Platform]</span></h3>
-                <div class="font-mono text-xs font-bold bg-gray-100 text-gray-800 px-4 py-2 rounded-full uppercase tracking-widest border border-gray-200">
+        <div class="bg-white rounded-3xl p-6 md:p-10 tech-border">
+            <div class="flex flex-col md:flex-row justify-between items-start mb-8 gap-4">
+                <div>
+                    <h3 class="text-3xl font-bold tracking-tight mb-2">18-DOF Hexapod</h3>
+                    <p class="text-gray-500 font-medium">Autonomous Stair-Climbing Platform</p>
+                </div>
+                <div class="font-mono text-xs font-bold bg-gray-100 px-3 py-1 rounded-full uppercase tracking-wider">
                     Hardware + Simulation
                 </div>
             </div>
             
-            <!-- Grid 1: Hardware & Live Test (3 Columns) -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <!-- Image 1 -->
-                <div class="flex flex-col gap-3">
-                    <div class="media-container aspect-video">
-                        <img src="hexapod-chassis-front.jpg" alt="Front Chassis View">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+                <div class="flex flex-col gap-2">
+                    <div class="img-container aspect-video">
+                        <img src="hexapod-chassis-front.jpg" alt="Front Chassis" onerror="this.src='https://via.placeholder.com/400x225?text=Image+Not+Found'">
                     </div>
-                    <div class="font-mono text-[11px] text-gray-500 uppercase tracking-widest font-bold">
-                        SYS_CAM_01 // CHASSIS_FRONT
-                    </div>
+                    <div class="font-mono text-[10px] text-gray-400 uppercase tracking-widest pl-1">SYS_CAM_01 // CHASSIS_FRONT</div>
                 </div>
                 
-                <!-- Image 2 -->
-                <div class="flex flex-col gap-3">
-                    <div class="media-container aspect-video">
-                        <img src="hexapod-electronics-hub.jpg" alt="Electronics Hub View">
+                <div class="flex flex-col gap-2">
+                    <div class="img-container aspect-video">
+                        <img src="hexapod-electronics-hub.jpg" alt="Electronics Hub" onerror="this.src='https://via.placeholder.com/400x225?text=Image+Not+Found'">
                     </div>
-                    <div class="font-mono text-[11px] text-gray-500 uppercase tracking-widest font-bold">
-                        SYS_CAM_02 // PCA9685_HUB
-                    </div>
+                    <div class="font-mono text-[10px] text-gray-400 uppercase tracking-widest pl-1">SYS_CAM_02 // PCA9685_HUB</div>
                 </div>
 
-                <!-- Video -->
-                <div class="flex flex-col gap-3">
-                    <div class="media-container aspect-video border-2 border-cmf">
+                <div class="flex flex-col gap-2">
+                    <div class="img-container aspect-video border-2 border-[#FF4500]">
                         <video autoplay loop muted playsinline>
                             <source src="hexapod-sim-demo.mp4" type="video/mp4">
                         </video>
                     </div>
-                    <div class="font-mono text-[11px] text-cmf uppercase tracking-widest font-bold animate-pulse">
-                        ● LIVE_TELEMETRY // ACTUATION_TEST
-                    </div>
+                    <div class="font-mono text-[10px] accent-cmf uppercase tracking-widest pl-1 font-bold">● LIVE_TELEMETRY // ACTUATION_TEST</div>
                 </div>
             </div>
 
-            <!-- Grid 2: Simulation Data (2 Columns) -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-                <!-- Sim Image 1 -->
-                <div class="flex flex-col gap-3">
-                    <div class="media-container aspect-[16/9]">
-                        <img src="hexapod-telemetry-wave.jpg" alt="Wave Gait Telemetry">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+                <div class="flex flex-col gap-2">
+                    <div class="img-container aspect-[16/9]">
+                        <img src="hexapod-telemetry-wave.jpg" alt="Wave Gait Telemetry" onerror="this.src='https://via.placeholder.com/400x225?text=Image+Not+Found'">
                     </div>
-                    <div class="font-mono text-[11px] text-gray-500 uppercase tracking-widest font-bold">
-                        SIM_DATA // WAVE_GAIT_ANALYSIS
-                    </div>
+                    <div class="font-mono text-[10px] text-gray-400 uppercase tracking-widest pl-1">SIM_DATA // WAVE_GAIT_ANALYSIS</div>
                 </div>
-                <!-- Sim Image 2 -->
-                <div class="flex flex-col gap-3">
-                    <div class="media-container aspect-[16/9]">
-                        <img src="hexapod-telemetry-tripod.jpg" alt="Tripod Gait Telemetry">
+                <div class="flex flex-col gap-2">
+                    <div class="img-container aspect-[16/9]">
+                        <img src="hexapod-telemetry-tripod.jpg" alt="Tripod Gait Telemetry" onerror="this.src='https://via.placeholder.com/400x225?text=Image+Not+Found'">
                     </div>
-                    <div class="font-mono text-[11px] text-gray-500 uppercase tracking-widest font-bold">
-                        SIM_DATA // TRIPOD_GAIT_ANALYSIS
-                    </div>
+                    <div class="font-mono text-[10px] text-gray-400 uppercase tracking-widest pl-1">SIM_DATA // TRIPOD_GAIT_ANALYSIS</div>
                 </div>
             </div>
 
-            <!-- Grid 3: Technical Specs (TE Style Tabular Data) -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 font-mono text-sm">
-                <div class="tech-grid-item p-5 rounded-xl flex flex-col justify-between h-28">
-                    <span class="text-gray-400 text-xs tracking-wider">KINEMATICS</span>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 font-mono text-xs">
+                <div class="bg-gray-50 p-4 rounded-xl border border-gray-100 flex flex-col justify-between h-24">
+                    <span class="text-gray-400">KINEMATICS</span>
                     <span class="font-bold">L1:35 / L2:95 / L3:105</span>
                 </div>
-                <div class="tech-grid-item p-5 rounded-xl flex flex-col justify-between h-28">
-                    <span class="text-gray-400 text-xs tracking-wider">CONTROL</span>
+                <div class="bg-gray-50 p-4 rounded-xl border border-gray-100 flex flex-col justify-between h-24">
+                    <span class="text-gray-400">CONTROL</span>
                     <span class="font-bold">50Hz (RPi 4)</span>
                 </div>
-                <div class="tech-grid-item p-5 rounded-xl flex flex-col justify-between h-28">
-                    <span class="text-gray-400 text-xs tracking-wider">ACTUATION</span>
+                <div class="bg-gray-50 p-4 rounded-xl border border-gray-100 flex flex-col justify-between h-24">
+                    <span class="text-gray-400">ACTUATION</span>
                     <span class="font-bold">18x MG996R</span>
                 </div>
-                <!-- CMF Highlight Box -->
-                <div class="bg-cmf text-white p-5 rounded-xl flex flex-col justify-between h-28 shadow-lg shadow-orange-500/30 border border-[#e63e00]">
-                    <span class="text-white/80 text-xs tracking-wider">TORQUE_LIMIT</span>
-                    <span class="font-bold text-lg">11.0 kg-cm</span>
+                <div class="bg-cmf text-white p-4 rounded-xl flex flex-col justify-between h-24 shadow-lg shadow-orange-500/20">
+                    <span class="opacity-80">TORQUE_LIMIT</span>
+                    <span class="font-bold">11.0 kg-cm</span>
                 </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- SECONDARY PROJECTS SECTION -->
-    <section class="mb-24">
-        <!-- Section Header -->
-        <div class="flex items-center gap-4 mb-6">
-            <h2 class="font-mono text-sm font-bold tracking-widest text-black uppercase">02 // Additional Work</h2>
-            <div class="h-[1px] bg-gray-300 flex-grow"></div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- Project 1 -->
-            <div class="bg-white rounded-[2rem] p-8 tech-border hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
-                <div class="font-mono text-[10px] font-bold bg-black text-white px-3 py-1.5 rounded uppercase tracking-widest w-fit mb-6">
-                    Embedded Sensors
-                </div>
-                <h3 class="text-2xl font-bold tracking-tight mb-4">Food Spoilage Monitor</h3>
-                <p class="text-gray-500 leading-relaxed font-medium">
-                    Environmental tracking system utilizing Arduino, DHT11, and VOC gas sensors for continuous data acquisition and analysis.
-                </p>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="bg-white rounded-[2rem] p-8 tech-border hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
-                <div class="font-mono text-[10px] font-bold bg-black text-white px-3 py-1.5 rounded uppercase tracking-widest w-fit mb-6">
-                    Aerodynamics
-                </div>
-                <h3 class="text-2xl font-bold tracking-tight mb-4">RC Aircraft Assembly</h3>
-                <p class="text-gray-500 leading-relaxed font-medium">
-                    Fixed-wing structural assembly featuring brushless motor integration and precise static center-of-gravity balancing.
-                </p>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="border-t border-gray-300 pt-16 pb-12 flex flex-col items-center">
-        <a href="mailto:zaeemmohammad76@gmail.com" class="inline-flex items-center justify-center bg-black text-white font-semibold text-lg px-10 py-5 rounded-full hover:bg-gray-800 transition-colors shadow-lg hover:shadow-xl mb-12">
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+        <div class="bg-white rounded-3xl p-8 tech-border hover:shadow-lg transition-shadow">
+            <div class="font-mono text-xs font-bold bg-orange-100 text-orange-600 px-3 py-1 rounded-full uppercase tracking-wider w-fit mb-6">
+                Embedded Sensors
+            </div>
+            <h3 class="text-xl font-bold tracking-tight mb-3">Food Spoilage Monitor</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+                Environmental tracking system utilizing Arduino, DHT11, and VOC gas sensors for continuous data acquisition and analysis.
+            </p>
+        </div>
+
+        <div class="bg-white rounded-3xl p-8 tech-border hover:shadow-lg transition-shadow">
+            <div class="font-mono text-xs font-bold bg-blue-100 text-blue-600 px-3 py-1 rounded-full uppercase tracking-wider w-fit mb-6">
+                Aerodynamics
+            </div>
+            <h3 class="text-xl font-bold tracking-tight mb-3">RC Aircraft Assembly</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+                Fixed-wing structural assembly featuring brushless motor integration and precise static center-of-gravity balancing.
+            </p>
+        </div>
+    </section>
+
+    <footer class="text-center pb-12 pt-8">
+        <a href="mailto:zaeemmohammad76@gmail.com" class="inline-flex items-center justify-center bg-black text-white font-medium px-8 py-4 rounded-full hover:scale-105 transition-transform">
             Get in touch
         </a>
-        
-        <div class="font-mono text-sm text-gray-500 font-bold flex gap-6 tracking-widest">
-            <a href="https://github.com/zaeem-mohd" target="_blank" class="hover:text-black transition-colors">GITHUB</a>
-            <span class="text-gray-300">//</span>
-            <span class="text-black">+91-7795529508</span>
+        <div class="mt-8 font-mono text-xs text-gray-400 space-x-4">
+            <a href="https://github.com/zaeem-mohd" class="hover:text-black transition-colors">GITHUB</a>
+            <span>//</span>
+            <span>+91-7795529508</span>
         </div>
     </footer>
 
