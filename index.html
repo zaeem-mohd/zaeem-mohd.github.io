@@ -121,28 +121,28 @@
         </p>
     </header>
 
-    <!-- MAIN PROJECT: HEXAPOD -->
-    <section id="projects" class="mb-20">
+    <!-- MAIN PROJECT 1: HEXAPOD HARDWARE -->
+    <section id="projects" class="mb-10">
         <div class="font-mono text-xs font-bold tracking-widest text-gray-400 mb-4 uppercase" data-aos="fade-right">Selected Work 01</div>
         
         <div class="bg-white dark:bg-[#1A1A1A] rounded-3xl p-6 md:p-10 tech-border" data-aos="fade-up">
             <div class="flex flex-col md:flex-row justify-between items-start mb-6 gap-4">
                 <div>
-                    <h3 class="text-3xl font-bold tracking-tight mb-2">18-DOF Hexapod</h3>
+                    <h3 class="text-3xl font-bold tracking-tight mb-2">18-DOF Hexapod: Hardware & Control</h3>
                 </div>
                 <div class="flex gap-2">
-                    <a href="https://github.com/zaeem-mohd/hexapod-robotics" target="_blank" class="font-mono text-xs font-bold border border-cmf text-cmf hover:bg-cmf hover:text-white px-4 py-2 rounded-full uppercase transition-colors">
-                        View Code & Math →
+                    <a href="https://github.com/zaeem-mohd/hexapod-hardware-control" target="_blank" class="font-mono text-xs font-bold border border-cmf text-cmf hover:bg-cmf hover:text-white px-4 py-2 rounded-full uppercase transition-colors">
+                        View Hardware Repo →
                     </a>
                 </div>
             </div>
 
             <p class="text-gray-600 dark:text-gray-300 mb-8 max-w-4xl leading-relaxed">
-                A team of four is building a spider-inspired 18-DOF hexapod designed to climb stairs autonomously. I wrote the PyBullet simulation (inverse kinematics, Wave/Tripod/Ripple gaits, servo torque analysis) and am developing the Raspberry Pi control software and operator dashboard. <strong class="text-black dark:text-white">Status:</strong> robot assembled and in bring-up; running the simulated gaits on the hardware is the next milestone.
+                A team of four is building a spider-inspired 18-DOF hexapod designed to climb stairs autonomously. I am developing the Raspberry Pi control software, PCA9685 servo integration, and operator dashboard. <strong class="text-black dark:text-white">Status:</strong> robot assembled and in bring-up.
             </p>
             
-            <!-- HARDWARE & SIM GALLERY -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            <!-- HARDWARE GALLERY -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
                 <div class="flex flex-col gap-2" data-aos="zoom-in" data-aos-delay="100">
                     <div class="img-container aspect-video bg-gray-200 dark:bg-gray-800">
                         <div class="media-badge">HARDWARE</div>
@@ -160,57 +160,92 @@
                 </div>
 
                 <div class="flex flex-col gap-2" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="img-container aspect-video border-2 border-cmf bg-black">
-                        <div class="media-badge" style="background: #FF4500;">SIM</div>
-                        <video autoplay loop muted playsinline>
-                            <source src="hexapod-sim-demo.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="font-mono text-[11px] text-gray-500 font-medium pl-1">Simulation: screen recording of walking gait</div>
-                </div>
-            </div>
-
-            <!-- DATA & BLOCK DIAGRAM -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
-                <div class="grid grid-rows-2 gap-6">
-                    <div class="flex flex-col gap-2" data-aos="fade-right">
-                        <div class="img-container aspect-[21/9] bg-gray-200 dark:bg-gray-800">
-                            <div class="media-badge">SIM</div>
-                            <img src="hexapod-telemetry-wave.jpg" alt="Wave Gait" onerror="this.src='https://via.placeholder.com/600x250/333/fff?text=WAVE_GAIT_DATA'">
-                        </div>
-                        <div class="font-mono text-[11px] text-gray-500 font-medium pl-1">Wave gait: per-leg torque and foot height over one cycle</div>
-                    </div>
-                    <div class="flex flex-col gap-2" data-aos="fade-right">
-                        <div class="img-container aspect-[21/9] bg-gray-200 dark:bg-gray-800">
-                            <div class="media-badge">SIM</div>
-                            <img src="hexapod-telemetry-tripod.jpg" alt="Tripod Gait" onerror="this.src='https://via.placeholder.com/600x250/333/fff?text=TRIPOD_GAIT_DATA'">
-                        </div>
-                        <div class="font-mono text-[11px] text-gray-500 font-medium pl-1">Tripod gait: per-leg torque and foot height over one cycle</div>
-                    </div>
-                </div>
-                
-                <div class="flex flex-col gap-2 h-full" data-aos="fade-left">
-                    <div class="img-container h-full min-h-[300px] bg-gray-200 dark:bg-gray-800 tech-border flex items-center justify-center">
+                    <div class="img-container aspect-video bg-gray-200 dark:bg-gray-800">
                         <div class="media-badge">ARCHITECTURE</div>
-                        <img src="hexapod-block-diagram.jpg" alt="System Block Diagram" onerror="this.src='https://via.placeholder.com/600x400/333/fff?text=SYSTEM_BLOCK_DIAGRAM'">
+                        <img src="hexapod-block-diagram.jpg" alt="System Block Diagram" onerror="this.src='https://via.placeholder.com/400x225/333/fff?text=SYSTEM_BLOCK_DIAGRAM'">
                     </div>
-                    <div class="font-mono text-[11px] text-gray-500 font-medium pl-1">Block diagram: IK to PCA9685/Servos + BNO055/VL53L0X feedback</div>
+                    <div class="font-mono text-[11px] text-gray-500 font-medium pl-1">Hardware Block Diagram</div>
                 </div>
             </div>
 
             <!-- SPECS -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-2 font-mono text-xs">
                 <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-xl border border-gray-100 dark:border-gray-700 flex flex-col justify-between h-24">
-                    <span class="text-gray-400">KINEMATICS</span>
-                    <span class="font-bold">L1: 35mm / L2: 95mm / L3: 105mm</span>
+                    <span class="text-gray-400">CONTROLLER</span>
+                    <span class="font-bold">Raspberry Pi 4</span>
                 </div>
                 <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-xl border border-gray-100 dark:border-gray-700 flex flex-col justify-between h-24">
-                    <span class="text-gray-400">CONTROL</span>
-                    <span class="font-bold">50Hz (RPi 4)</span>
+                    <span class="text-gray-400">PWM DRIVERS</span>
+                    <span class="font-bold">PCA9685</span>
                 </div>
                 <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-xl border border-gray-100 dark:border-gray-700 flex flex-col justify-between h-24">
                     <span class="text-gray-400">ACTUATION</span>
                     <span class="font-bold">18x MG996R</span>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-xl border border-gray-100 dark:border-gray-700 flex flex-col justify-between h-24">
+                    <span class="text-gray-400">SENSORS</span>
+                    <span class="font-bold">BNO055 IMU</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN PROJECT 2: HEXAPOD SIMULATION -->
+    <section class="mb-20">
+        <div class="font-mono text-xs font-bold tracking-widest text-gray-400 mb-4 uppercase" data-aos="fade-right">Selected Work 02</div>
+        
+        <div class="bg-white dark:bg-[#1A1A1A] rounded-3xl p-6 md:p-10 tech-border" data-aos="fade-up">
+            <div class="flex flex-col md:flex-row justify-between items-start mb-6 gap-4">
+                <div>
+                    <h3 class="text-3xl font-bold tracking-tight mb-2">Hexapod PyBullet Simulation</h3>
+                </div>
+                <div class="flex gap-2">
+                    <a href="https://github.com/zaeem-mohd/hexapod-simulation" target="_blank" class="font-mono text-xs font-bold border border-cmf text-cmf hover:bg-cmf hover:text-white px-4 py-2 rounded-full uppercase transition-colors">
+                        View Simulation Repo →
+                    </a>
+                </div>
+            </div>
+
+            <p class="text-gray-600 dark:text-gray-300 mb-8 max-w-4xl leading-relaxed">
+                A custom Python-based physics simulation using PyBullet to validate inverse kinematics and locomotion algorithms prior to hardware deployment. Features real-time generation of Wave, Tripod, and Ripple gaits, alongside dynamic mass adaptation and live torque telemetry tracking against motor stall limits.
+            </p>
+            
+            <!-- SIMULATION VIDEOS -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                <div class="flex flex-col gap-2" data-aos="fade-right">
+                    <div class="img-container aspect-square md:aspect-video border-2 border-cmf bg-black rounded-xl overflow-hidden">
+                        <div class="media-badge" style="background: #FF4500;">SIMULATION 3D</div>
+                        <video width="100%" height="100%" autoplay loop muted playsinline style="object-fit: cover;">
+                            <source src="sim-walking.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="font-mono text-[11px] text-gray-500 font-medium pl-1">PyBullet Environment: Adaptive Gait Testing</div>
+                </div>
+
+                <div class="flex flex-col gap-2" data-aos="fade-left">
+                    <div class="img-container aspect-square md:aspect-video border-2 border-gray-700 bg-black rounded-xl overflow-hidden">
+                        <div class="media-badge">TELEMETRY</div>
+                        <video width="100%" height="100%" autoplay loop muted playsinline style="object-fit: cover;">
+                            <source src="sim-telemetry.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="font-mono text-[11px] text-gray-500 font-medium pl-1">Live Matplotlib Dashboard: Coxa/Femur/Tibia Torque Loads</div>
+                </div>
+            </div>
+
+            <!-- SPECS -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 font-mono text-xs">
+                <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-xl border border-gray-100 dark:border-gray-700 flex flex-col justify-between h-24">
+                    <span class="text-gray-400">ENGINE</span>
+                    <span class="font-bold">PyBullet (Python)</span>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-xl border border-gray-100 dark:border-gray-700 flex flex-col justify-between h-24">
+                    <span class="text-gray-400">MATH</span>
+                    <span class="font-bold">Inverse Kinematics</span>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-xl border border-gray-100 dark:border-gray-700 flex flex-col justify-between h-24">
+                    <span class="text-gray-400">DATA VIZ</span>
+                    <span class="font-bold">Matplotlib Live</span>
                 </div>
                 <div class="bg-cmf text-white p-4 rounded-xl flex flex-col justify-between h-24 shadow-lg shadow-orange-500/20">
                     <span class="opacity-80">TORQUE_LIMIT</span>
@@ -253,7 +288,7 @@
                 </div>
             </div>
 
-            <a href="https://github.com/brockzone/IOT-Spoilage-Detector./tree/main" target="_blank" class="font-mono text-[11px] font-bold text-cmf hover:underline uppercase mt-auto flex items-center">
+            <a href="https://github.com/zaeem-mohd/iot-spoilage-detector" target="_blank" class="font-mono text-[11px] font-bold text-cmf hover:underline uppercase mt-auto flex items-center">
                 View Repository →
             </a>
         </div>
