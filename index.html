@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Zaeem Mohammed - Mechatronics Engineering Student specializing in robotics, embedded control, and kinematics.">
-    <title>Zaeem Mohammed | Portfolio</title>
+    <title>Zaeem Mohammed | Mechatronics & Robotics Portfolio</title>
     
-    <!-- ================= TAILWIND & AOS CSS ================= -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -18,27 +18,32 @@
             }
         }
     </script>
+
+    <!-- AOS Animation CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- ================= CUSTOM STYLES ================= -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
         
         body {
             font-family: 'Inter', sans-serif;
             -webkit-font-smoothing: antialiased;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
+
         .font-mono { font-family: 'JetBrains Mono', monospace; }
+
         .tech-border {
             border: 1px solid #E5E5EA;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
             transition: border-color 0.3s ease;
         }
+        
         .dark .tech-border {
-            border-color: #333333;
+            border-color: #262626;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
         }
+
         .img-container {
             overflow: hidden;
             border-radius: 12px;
@@ -50,12 +55,14 @@
             object-fit: cover;
             transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .img-container:hover img { transform: scale(1.05); }
+        .img-container:hover img { transform: scale(1.03); }
+
         .media-badge {
             position: absolute;
-            top: 8px;
-            right: 8px;
-            background: rgba(0,0,0,0.7);
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.75);
+            backdrop-filter: blur(4px);
             color: #fff;
             padding: 4px 8px;
             border-radius: 4px;
@@ -65,6 +72,7 @@
             letter-spacing: 0.05em;
             z-index: 10;
         }
+        
         .thumb-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -76,7 +84,7 @@
 <body class="bg-[#F5F5F7] text-[#1D1D1F] dark:bg-[#111111] dark:text-[#F5F5F7] p-4 md:p-8 lg:max-w-7xl lg:mx-auto">
 
     <!-- ================= NAVIGATION BAR ================= -->
-    <nav data-aos="fade-down" class="flex justify-between items-center mb-16 bg-white/80 dark:bg-black/60 backdrop-blur-md rounded-full px-6 py-4 tech-border sticky top-4 z-50">
+    <nav data-aos="fade-down" class="flex justify-between items-center mb-16 bg-white/80 dark:bg-[#1A1A1A]/80 backdrop-blur-md rounded-full px-6 py-4 tech-border sticky top-4 z-50">
         <div class="font-bold text-lg tracking-tight">Zaeem<span class="text-cmf">.</span></div>
         <div class="hidden md:flex space-x-6 text-sm font-medium items-center text-gray-500 dark:text-gray-400">
             <a href="#projects" class="hover:text-black dark:hover:text-white transition-colors">Projects</a>
@@ -84,184 +92,198 @@
             <a href="https://github.com/zaeem-mohd" target="_blank" class="hover:text-black dark:hover:text-white transition-colors">GitHub</a>
             <a href="https://www.linkedin.com/in/zaeem-mohammed-17a882293" target="_blank" class="hover:text-black dark:hover:text-white transition-colors">LinkedIn</a>
             <a href="mailto:zaeemmohammad76@gmail.com" class="hover:text-black dark:hover:text-white transition-colors">Email</a>
-            <a href="Zaeem_Mohammed_Resume.pdf" download class="bg-gray-100 dark:bg-gray-800 text-black dark:text-white px-4 py-2 rounded-full hover:bg-cmf hover:text-white dark:hover:bg-cmf transition-colors">
-                Download resume (PDF) ↓
+            
+            <!-- RESUME LINK (Opens in new tab for reliable viewing) -->
+            <a href="Zaeem_Mohammed_Resume.pdf" target="_blank" download="Zaeem_Mohammed_Resume.pdf" class="bg-gray-100 dark:bg-gray-800 text-black dark:text-white px-4 py-2 rounded-full hover:bg-cmf hover:text-white dark:hover:bg-cmf transition-colors">
+                View Resume (PDF) ↗
             </a>
+            
             <button onclick="toggleDarkMode()" class="p-2 bg-gray-200 dark:bg-gray-800 rounded-full hover:scale-110 transition-transform" title="Toggle Dark Mode">
                 <span id="theme-icon">🌙</span>
             </button>
         </div>
     </nav>
 
-    <!-- ================= HEADER / HERO SECTION ================= -->
+    <!-- ================= HERO SECTION ================= -->
     <header class="mb-20" data-aos="fade-up">
         <div class="font-mono text-xs font-bold tracking-widest text-cmf mb-6 uppercase h-4">
             <span id="typing-text"></span><span class="animate-pulse">_</span>
         </div>
+        
         <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 leading-tight">
             Mechatronics Engineering Student, <br>
             <span class="text-cmf">Robotics & Embedded Control</span>
         </h1>
         <p class="text-lg md:text-xl text-gray-500 dark:text-gray-400 max-w-3xl leading-relaxed font-medium mb-8">
-            Final-year at MITE, building a self stair-climbing hexapod robot. I work on kinematics, physics simulation and Raspberry Pi control software.
+            Final-year student at MITE, building a self stair-climbing hexapod robot. Specialized in inverse kinematics, physics simulation, and Raspberry Pi embedded control software.
         </p>
     </header>
 
     <!-- ================= PROJECTS SECTION ================= -->
-    <section id="projects" class="mb-10">
+    <section id="projects" class="space-y-16 mb-20">
         
-        <!-- ================= PROJECT 1: HARDWARE ================= -->
-        <div class="font-mono text-xs font-bold tracking-widest text-gray-400 mb-4 uppercase" data-aos="fade-right">Selected Work 01</div>
-        <div class="bg-white dark:bg-[#1A1A1A] rounded-3xl p-6 md:p-10 tech-border" data-aos="fade-up">
-            <div class="flex flex-col md:flex-row justify-between items-start mb-6 gap-4">
-                <div>
-                    <h3 class="text-3xl font-bold tracking-tight mb-2">18-DOF Hexapod: Hardware & Control</h3>
-                </div>
-                <div class="flex gap-2">
-                    <a href="https://github.com/zaeem-mohd/hexapod-hardware-control" target="_blank" class="font-mono text-xs font-bold border border-cmf text-cmf hover:bg-cmf hover:text-white px-4 py-2 rounded-full uppercase transition-colors">
-                        View Hardware Repo →
-                    </a>
-                </div>
-            </div>
-            <p class="text-gray-600 dark:text-gray-300 mb-8 max-w-4xl leading-relaxed">
-                A team of four is building a spider-inspired 18-DOF hexapod designed to climb stairs autonomously. I am developing the Raspberry Pi control software, PCA9685 servo integration, and operator dashboard. <strong class="text-black dark:text-white">Status:</strong> robot assembled and in bring-up.
-            </p>
-            
-            <!-- HARDWARE GALLERY -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-                <div class="flex flex-col gap-2" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="img-container aspect-video bg-gray-200 dark:bg-gray-800">
-                        <div class="media-badge">HARDWARE</div>
-                        <img src="hexapod-chassis-front.jpg" alt="Front Chassis" onerror="this.src='https://via.placeholder.com/400x225/333/fff?text=CHASSIS_IMG'">
-                    </div>
-                    <div class="font-mono text-[11px] text-gray-500 font-medium pl-1">Front chassis view</div>
-                </div>
-                <div class="flex flex-col gap-2" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="img-container aspect-video bg-gray-200 dark:bg-gray-800">
-                        <div class="media-badge">HARDWARE</div>
-                        <img src="hexapod-electronics-hub.jpg" alt="Electronics Hub" onerror="this.src='https://via.placeholder.com/400x225/333/fff?text=ELECTRONICS_IMG'">
-                    </div>
-                    <div class="font-mono text-[11px] text-gray-500 font-medium pl-1">PCA9685 electronics hub</div>
-                </div>
-            </div>
-
-            <!-- HARDWARE SPECS GRID -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 font-mono">
-                <div class="bg-gray-50 dark:bg-[#1f1f1f] p-5 rounded-xl border border-gray-200 dark:border-gray-800 flex flex-col gap-3">
-                    <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
+        <!-- SELECTED WORK 01: HEXAPOD HARDWARE -->
+        <div>
+            <div class="font-mono text-xs font-bold tracking-widest text-gray-400 mb-4 uppercase" data-aos="fade-right">Selected Work 01</div>
+            <div class="bg-white dark:bg-[#1A1A1A] rounded-3xl p-6 md:p-10 tech-border" data-aos="fade-up">
+                <div class="flex flex-col md:flex-row justify-between items-start mb-6 gap-4">
                     <div>
-                        <span class="text-xs text-gray-500 dark:text-gray-400 block mb-1">CONTROLLER</span>
-                        <span class="font-bold text-sm md:text-base">Raspberry Pi 4</span>
+                        <h3 class="text-3xl font-bold tracking-tight mb-2">18-DOF Hexapod: Hardware & Control</h3>
+                    </div>
+                    <div class="flex gap-2">
+                        <a href="https://github.com/zaeem-mohd/hexapod-hardware-control" target="_blank" class="font-mono text-xs font-bold border border-cmf text-cmf hover:bg-cmf hover:text-white px-4 py-2 rounded-full uppercase transition-colors">
+                            View Hardware Repo →
+                        </a>
                     </div>
                 </div>
+
+                <p class="text-gray-600 dark:text-gray-300 mb-8 max-w-4xl leading-relaxed">
+                    A team of four is building a spider-inspired 18-DOF hexapod designed to climb stairs autonomously carrying a 2 kg payload. I am developing the Raspberry Pi 4 control architecture, PCA9685 PWM servo drive logic, BNO055 IMU pitch/roll stabilization, and operator telemetry dashboard. <strong class="text-black dark:text-white">Status:</strong> Physical assembly complete and undergoing bring-up testing.
+                </p>
                 
-                <div class="bg-gray-50 dark:bg-[#1f1f1f] p-5 rounded-xl border border-gray-200 dark:border-gray-800 flex flex-col gap-3">
-                    <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                    <div>
-                        <span class="text-xs text-gray-500 dark:text-gray-400 block mb-1">PWM DRIVERS</span>
-                        <span class="font-bold text-sm md:text-base">PCA9685</span>
+                <!-- HARDWARE GALLERY -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                    <div class="flex flex-col gap-2" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="img-container aspect-video bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                            <div class="media-badge">HARDWARE</div>
+                            <img src="hexapod-chassis-front.jpg" alt="Front Chassis View" onerror="this.src='https://via.placeholder.com/600x337/222/fff?text=hexapod-chassis-front.jpg'">
+                        </div>
+                        <div class="font-mono text-[11px] text-gray-500 font-medium pl-1">Front chassis view showing 3D-printed leg links & structural frame</div>
+                    </div>
+
+                    <div class="flex flex-col gap-2" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="img-container aspect-video bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+                            <div class="media-badge">HARDWARE</div>
+                            <img src="hexapod-electronics-hub.jpg" alt="PCA9685 Electronics Hub" onerror="this.src='https://via.placeholder.com/600x337/222/fff?text=hexapod-electronics-hub.jpg'">
+                        </div>
+                        <div class="font-mono text-[11px] text-gray-500 font-medium pl-1">PCA9685 electronics integration & power distribution hub</div>
                     </div>
                 </div>
 
-                <div class="bg-cmf text-white p-5 rounded-xl flex flex-col gap-3 shadow-lg shadow-orange-500/20">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                    <div>
-                        <span class="text-xs opacity-80 block mb-1">ACTUATION</span>
-                        <span class="font-bold text-sm md:text-base">18x MG996R</span>
+                <!-- HARDWARE SPECS GRID (Matching Icons & Font Sizing) -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 font-mono">
+                    <div class="bg-gray-50 dark:bg-[#222222] p-5 rounded-xl border border-gray-200 dark:border-gray-800 flex flex-col gap-3">
+                        <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
+                        <div>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 block mb-1">CONTROLLER</span>
+                            <span class="font-bold text-sm md:text-base">Raspberry Pi 4</span>
+                        </div>
                     </div>
-                </div>
+                    
+                    <div class="bg-gray-50 dark:bg-[#222222] p-5 rounded-xl border border-gray-200 dark:border-gray-800 flex flex-col gap-3">
+                        <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        <div>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 block mb-1">PWM DRIVERS</span>
+                            <span class="font-bold text-sm md:text-base">PCA9685</span>
+                        </div>
+                    </div>
 
-                <div class="bg-gray-50 dark:bg-[#1f1f1f] p-5 rounded-xl border border-gray-200 dark:border-gray-800 flex flex-col gap-3">
-                    <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path></svg>
-                    <div>
-                        <span class="text-xs text-gray-500 dark:text-gray-400 block mb-1">SENSORS</span>
-                        <span class="font-bold text-sm md:text-base">BNO055 IMU</span>
+                    <!-- Highlighted Orange Block for Actuation -->
+                    <div class="bg-cmf text-white p-5 rounded-xl flex flex-col gap-3 shadow-lg shadow-orange-500/20">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        <div>
+                            <span class="text-xs opacity-80 block mb-1">ACTUATION</span>
+                            <span class="font-bold text-sm md:text-base">18x MG996R</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 dark:bg-[#222222] p-5 rounded-xl border border-gray-200 dark:border-gray-800 flex flex-col gap-3">
+                        <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path></svg>
+                        <div>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 block mb-1">SENSORS</span>
+                            <span class="font-bold text-sm md:text-base">BNO055 IMU</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- ================= PROJECT 2: SIMULATION ================= -->
-    <section class="mb-20">
-        <div class="font-mono text-xs font-bold tracking-widest text-gray-400 mb-4 uppercase" data-aos="fade-right">Selected Work 02</div>
-        <div class="bg-white dark:bg-[#1A1A1A] rounded-3xl p-6 md:p-10 tech-border" data-aos="fade-up">
-            <div class="flex flex-col md:flex-row justify-between items-start mb-6 gap-4">
-                <div>
-                    <h3 class="text-3xl font-bold tracking-tight mb-2">Hexapod PyBullet Simulation</h3>
-                </div>
-                <div class="flex gap-2">
-                    <a href="https://github.com/zaeem-mohd/hexapod-simulation" target="_blank" class="font-mono text-xs font-bold border border-cmf text-cmf hover:bg-cmf hover:text-white px-4 py-2 rounded-full uppercase transition-colors">
-                        View Simulation Repo →
-                    </a>
-                </div>
-            </div>
-            <p class="text-gray-600 dark:text-gray-300 mb-8 max-w-4xl leading-relaxed">
-                A custom Python-based physics simulation using PyBullet to validate inverse kinematics and locomotion algorithms prior to hardware deployment. Features real-time generation of Wave, Tripod, and Ripple gaits, alongside dynamic mass adaptation and live torque telemetry tracking against motor stall limits.
-            </p>
-            
-            <!-- SIMULATION GALLERY -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-                <div class="flex flex-col gap-2" data-aos="fade-right">
-                    <div class="img-container aspect-square md:aspect-video border-2 border-cmf bg-black rounded-xl overflow-hidden">
-                        <div class="media-badge" style="background: #FF4500;">SIMULATION 3D</div>
-                        <video width="100%" height="100%" autoplay loop muted playsinline style="object-fit: cover;">
-                            <source src="sim-walking.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="font-mono text-[11px] text-gray-500 font-medium pl-1">PyBullet Environment: Adaptive Gait Testing</div>
-                </div>
-                <div class="flex flex-col gap-2" data-aos="fade-left">
-                    <div class="img-container aspect-square md:aspect-video border-2 border-gray-700 bg-black rounded-xl overflow-hidden">
-                        <div class="media-badge">TELEMETRY</div>
-                        <video width="100%" height="100%" autoplay loop muted playsinline style="object-fit: cover;">
-                            <source src="sim-telemetry.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="font-mono text-[11px] text-gray-500 font-medium pl-1">Live Matplotlib Dashboard: Coxa/Femur/Tibia Torque Loads</div>
-                </div>
-            </div>
-
-            <!-- SIMULATION SPECS GRID -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 font-mono">
-                <div class="bg-gray-50 dark:bg-[#1f1f1f] p-5 rounded-xl border border-gray-200 dark:border-gray-800 flex flex-col gap-3">
-                    <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+        <!-- SELECTED WORK 02: HEXAPOD SIMULATION -->
+        <div>
+            <div class="font-mono text-xs font-bold tracking-widest text-gray-400 mb-4 uppercase" data-aos="fade-right">Selected Work 02</div>
+            <div class="bg-white dark:bg-[#1A1A1A] rounded-3xl p-6 md:p-10 tech-border" data-aos="fade-up">
+                <div class="flex flex-col md:flex-row justify-between items-start mb-6 gap-4">
                     <div>
-                        <span class="text-xs text-gray-500 dark:text-gray-400 block mb-1">ENGINE</span>
-                        <span class="font-bold text-sm md:text-base">PyBullet (Python)</span>
+                        <h3 class="text-3xl font-bold tracking-tight mb-2">Hexapod PyBullet Simulation</h3>
+                    </div>
+                    <div class="flex gap-2">
+                        <a href="https://github.com/zaeem-mohd/hexapod-simulation" target="_blank" class="font-mono text-xs font-bold border border-cmf text-cmf hover:bg-cmf hover:text-white px-4 py-2 rounded-full uppercase transition-colors">
+                            View Simulation Repo →
+                        </a>
                     </div>
                 </div>
+
+                <p class="text-gray-600 dark:text-gray-300 mb-8 max-w-4xl leading-relaxed">
+                    A custom Python-based physics simulation using PyBullet to validate inverse kinematics and locomotion algorithms prior to hardware deployment. Features real-time generation of Wave, Tripod, and Ripple gaits, alongside dynamic mass adaptation and live torque telemetry tracking against motor stall limits.
+                </p>
                 
-                <div class="bg-gray-50 dark:bg-[#1f1f1f] p-5 rounded-xl border border-gray-200 dark:border-gray-800 flex flex-col gap-3">
-                    <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-                    <div>
-                        <span class="text-xs text-gray-500 dark:text-gray-400 block mb-1">MATH</span>
-                        <span class="font-bold text-sm md:text-base">Inverse Kinematics</span>
+                <!-- SIMULATION VIDEOS -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                    <div class="flex flex-col gap-2" data-aos="fade-right">
+                        <div class="img-container aspect-square md:aspect-video border-2 border-cmf bg-black rounded-xl overflow-hidden">
+                            <div class="media-badge" style="background: #FF4500;">SIMULATION 3D</div>
+                            <video width="100%" height="100%" autoplay loop muted playsinline style="object-fit: cover;">
+                                <source src="sim-walking.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="font-mono text-[11px] text-gray-500 font-medium pl-1">PyBullet Environment: Adaptive Gait & IK Engine</div>
+                    </div>
+
+                    <div class="flex flex-col gap-2" data-aos="fade-left">
+                        <div class="img-container aspect-square md:aspect-video border-2 border-gray-700 bg-black rounded-xl overflow-hidden">
+                            <div class="media-badge">TELEMETRY</div>
+                            <video width="100%" height="100%" autoplay loop muted playsinline style="object-fit: cover;">
+                                <source src="sim-telemetry.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="font-mono text-[11px] text-gray-500 font-medium pl-1">Live Matplotlib Dashboard: Coxa/Femur/Tibia Torque Loads</div>
                     </div>
                 </div>
 
-                <div class="bg-gray-50 dark:bg-[#1f1f1f] p-5 rounded-xl border border-gray-200 dark:border-gray-800 flex flex-col gap-3">
-                    <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path></svg>
-                    <div>
-                        <span class="text-xs text-gray-500 dark:text-gray-400 block mb-1">DATA VIZ</span>
-                        <span class="font-bold text-sm md:text-base">Matplotlib Live</span>
+                <!-- SIMULATION SPECS GRID -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 font-mono">
+                    <div class="bg-gray-50 dark:bg-[#222222] p-5 rounded-xl border border-gray-200 dark:border-gray-800 flex flex-col gap-3">
+                        <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        <div>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 block mb-1">ENGINE</span>
+                            <span class="font-bold text-sm md:text-base">PyBullet (Python)</span>
+                        </div>
                     </div>
-                </div>
+                    
+                    <div class="bg-gray-50 dark:bg-[#222222] p-5 rounded-xl border border-gray-200 dark:border-gray-800 flex flex-col gap-3">
+                        <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                        <div>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 block mb-1">MATH</span>
+                            <span class="font-bold text-sm md:text-base">Inverse Kinematics</span>
+                        </div>
+                    </div>
 
-                <div class="bg-cmf text-white p-5 rounded-xl flex flex-col gap-3 shadow-lg shadow-orange-500/20">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-                    <div>
-                        <span class="text-xs opacity-80 block mb-1">TORQUE_LIMIT</span>
-                        <span class="font-bold text-sm md:text-base">11.0 kg-cm</span>
+                    <div class="bg-gray-50 dark:bg-[#222222] p-5 rounded-xl border border-gray-200 dark:border-gray-800 flex flex-col gap-3">
+                        <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path></svg>
+                        <div>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 block mb-1">DATA VIZ</span>
+                            <span class="font-bold text-sm md:text-base">Matplotlib Live</span>
+                        </div>
+                    </div>
+
+                    <!-- Highlighted Orange Block for Torque Limit -->
+                    <div class="bg-cmf text-white p-5 rounded-xl flex flex-col gap-3 shadow-lg shadow-orange-500/20">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                        <div>
+                            <span class="text-xs opacity-80 block mb-1">TORQUE_LIMIT</span>
+                            <span class="font-bold text-sm md:text-base">11.0 kg-cm</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </section>
 
-    <!-- ================= PROJECT 3: SMALLER PROJECTS GRID ================= -->
+    <!-- ================= SECONDARY PROJECTS GRID ================= -->
     <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
-        <!-- IoT Project -->
+        
+        <!-- SmartIOF IoT Spoilage Detector -->
         <div class="bg-white dark:bg-[#1A1A1A] rounded-3xl p-8 tech-border hover:shadow-lg dark:hover:shadow-white/5 transition-shadow flex flex-col" data-aos="fade-up">
             <div class="font-mono text-xs font-bold bg-orange-100 text-orange-600 dark:bg-orange-900/30 dark:text-orange-400 px-3 py-1 rounded-full uppercase tracking-wider w-fit mb-6">
                 IoT & Embedded
@@ -270,76 +292,95 @@
             <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6">
                 IoT-based agricultural spoilage detection system. Features an ESP32 local web server serving a responsive Glassmorphism dashboard, non-blocking millis() control for LED alerts, and custom threshold logic converting raw MQ-135 and DHT22 analog data into a 1-5 threat level.
             </p>
+            
             <div class="grid grid-cols-2 gap-2 font-mono text-[10px] mb-6 flex-grow">
-                <div class="bg-gray-50 dark:bg-gray-800 p-2 rounded border border-gray-100 dark:border-gray-700">
+                <div class="bg-gray-50 dark:bg-[#222222] p-2 rounded border border-gray-100 dark:border-gray-800">
                     <span class="text-gray-400 block">CONTROLLER</span>
                     <span class="font-bold">ESP32 (NodeMCU)</span>
                 </div>
-                <div class="bg-gray-50 dark:bg-gray-800 p-2 rounded border border-gray-100 dark:border-gray-700">
+                <div class="bg-gray-50 dark:bg-[#222222] p-2 rounded border border-gray-100 dark:border-gray-800">
                     <span class="text-gray-400 block">SOFTWARE</span>
-                    <span class="font-bold">C++, WebServer, WiFi.h</span>
+                    <span class="font-bold">C++, WebServer</span>
                 </div>
-                <div class="bg-gray-50 dark:bg-gray-800 p-2 rounded border border-gray-100 dark:border-gray-700">
+                <div class="bg-gray-50 dark:bg-[#222222] p-2 rounded border border-gray-100 dark:border-gray-800">
                     <span class="text-gray-400 block">SENSORS</span>
                     <span class="font-bold">DHT22, MQ-135</span>
                 </div>
-                <div class="bg-gray-50 dark:bg-gray-800 p-2 rounded border border-gray-100 dark:border-gray-700">
+                <div class="bg-gray-50 dark:bg-[#222222] p-2 rounded border border-gray-100 dark:border-gray-800">
                     <span class="text-gray-400 block">UI</span>
-                    <span class="font-bold">Glassmorphism (HTML/CSS)</span>
+                    <span class="font-bold">Glassmorphism</span>
                 </div>
             </div>
+
             <a href="https://github.com/zaeem-mohd/iot-spoilage-detector" target="_blank" class="font-mono text-[11px] font-bold text-cmf hover:underline uppercase mt-auto flex items-center">
                 View Repository →
             </a>
         </div>
 
-        <!-- RC Aircraft Project -->
+        <!-- RC Aircraft Assembly -->
         <div class="bg-white dark:bg-[#1A1A1A] rounded-3xl p-8 tech-border hover:shadow-lg dark:hover:shadow-white/5 transition-shadow flex flex-col" data-aos="fade-up" data-aos-delay="100">
             <div class="thumb-grid">
                 <div class="img-container aspect-square bg-gray-200 dark:bg-gray-800 rounded-lg">
-                    <img src="rc-plane-team.jpg" alt="Phoenix RC Plane Team">
+                    <img src="rc-plane-team.jpg" alt="Phoenix RC Plane Team" onerror="this.src='https://via.placeholder.com/200?text=rc-plane-team.jpg'">
                 </div>
                 <div class="img-container aspect-square bg-gray-200 dark:bg-gray-800 rounded-lg">
-                    <img src="rc-plane-aerial.jpg" alt="RC Aircraft Group Field Shot">
+                    <img src="rc-plane-aerial.jpg" alt="RC Aircraft Field Shot" onerror="this.src='https://via.placeholder.com/200?text=rc-plane-aerial.jpg'">
                 </div>
             </div>
-            <div class="font-mono text-xs font-bold bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400 px-3 py-1 rounded-full uppercase tracking-wider w-fit mb-6">
+            <div class="font-mono text-xs font-bold bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400 px-3 py-1 rounded-full uppercase tracking-wider w-fit mb-4">
                 Aerodynamics
             </div>
             <h3 class="text-xl font-bold tracking-tight mb-3">RC Aircraft Assembly</h3>
             <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed flex-grow">
-                Fixed-wing structural assembly featuring brushless motor integration and precise static center-of-gravity balancing.
+                Fixed-wing structural assembly featuring brushless motor integration, ESC configuration, and precise static center-of-gravity (CoG) balancing for stable aerodynamic flight.
             </p>
         </div>
         
-        <!-- Mechanical Design Project -->
+        <!-- Peaucellier Linkage -->
         <div class="bg-white dark:bg-[#1A1A1A] rounded-3xl p-8 tech-border hover:shadow-lg dark:hover:shadow-white/5 transition-shadow flex flex-col" data-aos="fade-up" data-aos-delay="200">
             <div class="font-mono text-xs font-bold bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400 px-3 py-1 rounded-full uppercase tracking-wider w-fit mb-6 mt-[104px]"> 
                 Mechanical Design
             </div>
             <h3 class="text-xl font-bold tracking-tight mb-3">Peaucellier Linkage</h3>
             <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed flex-grow">
-                Designed and built a physical mechanism converting rotary motion into precise straight-line motion utilizing kinematic linkages.
+                Designed and manufactured an 8-bar planar linkage mechanism converting continuous rotational input into exact straight-line mechanical motion, verified through physical testing.
             </p>
         </div>
     </section>
 
-    <!-- ================= RESUME / BACKGROUND SECTION ================= -->
+    <!-- ================= BACKGROUND & QUALIFICATIONS ================= -->
     <section id="resume" class="mb-20" data-aos="fade-up">
         <div class="font-mono text-xs font-bold tracking-widest text-gray-400 mb-8 uppercase text-center md:text-left">Background & Qualifications</div>
+        
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Skills Box -->
+            <!-- Skills -->
             <div class="bg-white dark:bg-[#1A1A1A] p-8 rounded-3xl tech-border">
                 <h4 class="text-xl font-bold mb-6 border-b border-gray-200 dark:border-gray-800 pb-2">Technical Skills</h4>
                 <div class="space-y-4 text-sm text-gray-600 dark:text-gray-300">
-                    <div><span class="font-bold text-black dark:text-white block mb-1">Automation & Controls</span>PLC & SCADA, Ladder Logic, HDL</div>
-                    <div><span class="font-bold text-black dark:text-white block mb-1">Embedded Systems</span>ESP32, Arduino, Raspberry Pi, Sensor Integration</div>
-                    <div><span class="font-bold text-black dark:text-white block mb-1">Programming</span>C, C++, Python, MATLAB, Assembly</div>
-                    <div><span class="font-bold text-black dark:text-white block mb-1">Mechanical & CAD</span>SolidWorks, AutoCAD, Fusion 360, Siemens NX</div>
-                    <div><span class="font-bold text-black dark:text-white block mb-1">Simulation</span>MATLAB/Simulink, Ansys, PyBullet, Siemens Robcad</div>
+                    <div>
+                        <span class="font-bold text-black dark:text-white block mb-1">Automation & Controls</span>
+                        PLC & SCADA, Ladder Logic, HDL
+                    </div>
+                    <div>
+                        <span class="font-bold text-black dark:text-white block mb-1">Embedded Systems</span>
+                        ESP32, Arduino, Raspberry Pi, Sensor Integration
+                    </div>
+                    <div>
+                        <span class="font-bold text-black dark:text-white block mb-1">Programming</span>
+                        C, C++, Python, MATLAB, Assembly
+                    </div>
+                    <div>
+                        <span class="font-bold text-black dark:text-white block mb-1">Mechanical & CAD</span>
+                        SolidWorks, AutoCAD, Fusion 360, Siemens NX
+                    </div>
+                    <div>
+                        <span class="font-bold text-black dark:text-white block mb-1">Simulation</span>
+                        MATLAB/Simulink, Ansys, PyBullet, Siemens Robcad
+                    </div>
                 </div>
             </div>
-            <!-- Certifications Box -->
+
+            <!-- Certifications -->
             <div class="bg-white dark:bg-[#1A1A1A] p-8 rounded-3xl tech-border">
                 <h4 class="text-xl font-bold mb-6 border-b border-gray-200 dark:border-gray-800 pb-2">Certifications & Training</h4>
                 <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-300 list-disc pl-4 marker:text-cmf">
@@ -351,7 +392,8 @@
                     <li><strong class="text-black dark:text-white">AI & R Programming</strong> — Infosys Springboard</li>
                 </ul>
             </div>
-            <!-- Education Box -->
+
+            <!-- Education -->
             <div class="bg-white dark:bg-[#1A1A1A] p-8 rounded-3xl tech-border">
                 <h4 class="text-xl font-bold mb-6 border-b border-gray-200 dark:border-gray-800 pb-2">Education</h4>
                 <div class="space-y-6 text-sm">
@@ -383,28 +425,27 @@
             Send an Email
         </a>
         <div class="mt-12 font-mono text-xs text-gray-400 space-x-4">
-            <a href="https://github.com/zaeem-mohd" class="hover:text-cmf transition-colors">GITHUB</a>
+            <a href="https://github.com/zaeem-mohd" target="_blank" class="hover:text-cmf transition-colors">GITHUB</a>
             <span>//</span>
-            <a href="https://www.linkedin.com/in/zaeem-mohammed-17a882293" class="hover:text-cmf transition-colors">LINKEDIN</a>
+            <a href="https://www.linkedin.com/in/zaeem-mohammed-17a882293" target="_blank" class="hover:text-cmf transition-colors">LINKEDIN</a>
             <span>//</span>
-            <a href="Zaeem_Mohammed_Resume.pdf" download class="hover:text-cmf transition-colors">DOWNLOAD_RESUME</a>
+            <a href="Zaeem_Mohammed_Resume.pdf" target="_blank" download="Zaeem_Mohammed_Resume.pdf" class="hover:text-cmf transition-colors">VIEW_RESUME</a>
         </div>
     </footer>
 
-    <!-- ================= SCRIPTS ================= -->
+    <!-- AOS Script -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom Theme & Typing Scripts -->
     <script>
-        // Initialize Animate On Scroll
         AOS.init({ duration: 800, once: true, offset: 50 });
-        
-        // Dark Mode Toggle
+
         function toggleDarkMode() {
             document.documentElement.classList.toggle('dark');
             const isDark = document.documentElement.classList.contains('dark');
             document.getElementById('theme-icon').innerText = isDark ? '☀️' : '🌙';
         }
-        
-        // Header Typing Effect
+
         const textToType = "> STATUS: AVAILABLE FROM 28 DEC 2026, 3-MONTH INTERNSHIP, EXTENDABLE";
         let typingIndex = 0;
         function typeWriter() {
