@@ -74,6 +74,14 @@
             letter-spacing: 0.05em;
             z-index: 10;
         }
+        
+        /* Thumbnail grid for small images */
+        .thumb-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
     </style>
 </head>
 <body class="bg-[#F5F5F7] text-[#1D1D1F] dark:bg-[#111111] dark:text-[#F5F5F7] p-4 md:p-8 lg:max-w-7xl lg:mx-auto">
@@ -214,32 +222,46 @@
 
     <!-- SECONDARY PROJECTS -->
     <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
-        <div class="bg-white dark:bg-[#1A1A1A] rounded-3xl p-8 tech-border hover:shadow-lg dark:hover:shadow-white/5 transition-shadow" data-aos="fade-up">
+        <!-- Project: Food Spoilage Monitor -->
+        <div class="bg-white dark:bg-[#1A1A1A] rounded-3xl p-8 tech-border hover:shadow-lg dark:hover:shadow-white/5 transition-shadow flex flex-col" data-aos="fade-up">
             <div class="font-mono text-xs font-bold bg-orange-100 text-orange-600 dark:bg-orange-900/30 dark:text-orange-400 px-3 py-1 rounded-full uppercase tracking-wider w-fit mb-6">
                 Embedded Sensors
             </div>
             <h3 class="text-xl font-bold tracking-tight mb-3">Food Spoilage Monitor</h3>
-            <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+            <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
                 Environmental tracking system utilizing Arduino, DHT11, and VOC gas sensors for continuous data acquisition and analysis.
             </p>
+            <a href="https://github.com/brockzone/IOT-Spoilage-Detector./tree/main" target="_blank" class="font-mono text-[11px] font-bold text-cmf hover:underline uppercase mt-auto flex items-center">
+                View Repository →
+            </a>
         </div>
 
-        <div class="bg-white dark:bg-[#1A1A1A] rounded-3xl p-8 tech-border hover:shadow-lg dark:hover:shadow-white/5 transition-shadow" data-aos="fade-up" data-aos-delay="100">
+        <!-- Project: RC Aircraft -->
+        <div class="bg-white dark:bg-[#1A1A1A] rounded-3xl p-8 tech-border hover:shadow-lg dark:hover:shadow-white/5 transition-shadow flex flex-col" data-aos="fade-up" data-aos-delay="100">
+            <div class="thumb-grid">
+                <div class="img-container aspect-square bg-gray-200 dark:bg-gray-800 rounded-lg">
+                    <img src="WhatsApp Image 2026-10-25 at 6.49.13 PM.jpeg" alt="Phoenix RC Plane Team">
+                </div>
+                <div class="img-container aspect-square bg-gray-200 dark:bg-gray-800 rounded-lg">
+                    <img src="WhatsApp Image 2026-10-25 at 6.49.14 PM.jpeg" alt="RC Aircraft Group Field Shot">
+                </div>
+            </div>
             <div class="font-mono text-xs font-bold bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400 px-3 py-1 rounded-full uppercase tracking-wider w-fit mb-6">
                 Aerodynamics
             </div>
             <h3 class="text-xl font-bold tracking-tight mb-3">RC Aircraft Assembly</h3>
-            <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+            <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed flex-grow">
                 Fixed-wing structural assembly featuring brushless motor integration and precise static center-of-gravity balancing.
             </p>
         </div>
         
-        <div class="bg-white dark:bg-[#1A1A1A] rounded-3xl p-8 tech-border hover:shadow-lg dark:hover:shadow-white/5 transition-shadow" data-aos="fade-up" data-aos-delay="200">
-            <div class="font-mono text-xs font-bold bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400 px-3 py-1 rounded-full uppercase tracking-wider w-fit mb-6">
+        <!-- Project: Peaucellier Linkage -->
+        <div class="bg-white dark:bg-[#1A1A1A] rounded-3xl p-8 tech-border hover:shadow-lg dark:hover:shadow-white/5 transition-shadow flex flex-col" data-aos="fade-up" data-aos-delay="200">
+            <div class="font-mono text-xs font-bold bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400 px-3 py-1 rounded-full uppercase tracking-wider w-fit mb-6 mt-[104px]"> <!-- mt aligns text with RC card -->
                 Mechanical Design
             </div>
             <h3 class="text-xl font-bold tracking-tight mb-3">Peaucellier Linkage</h3>
-            <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+            <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed flex-grow">
                 Designed and built a physical mechanism converting rotary motion into precise straight-line motion utilizing kinematic linkages.
             </p>
         </div>
